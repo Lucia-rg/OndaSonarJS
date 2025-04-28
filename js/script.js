@@ -27,6 +27,70 @@ function ingresoUsuario (usuarios){
     }
 }
 
+function cambioPropiedadUsuario (usuarioBusqueda, propiedadCambio) {
+
+    let controlCambio = true;
+
+    while (controlCambio) {
+
+        if (propiedadCambio < Object.keys(usuarioBusqueda).length && propiedadCambio>= 1) {
+            controlCambio = false;
+
+            switch (propiedadCambio) {
+                case 1:
+                    usuarioBusqueda.nombre = prompt('Escriba el nuevo nombre');
+                    break;
+        
+                case 2:
+                    usuarioBusqueda.apellido = prompt('Escriba el nuevo apellido');
+                    break;
+        
+                case 3:
+                    usuarioBusqueda.cargo = prompt('Escriba el nuevo cargo');
+                    break;
+        
+                case 4:
+                    usuarioBusqueda.celular = prompt('Escriba el nuevo celular');
+                    break;
+        
+                case 5:
+                    usuarioBusqueda.email = prompt('Escriba el nuevo email');
+                    break;  
+                     
+                default:
+                    alert('Ingrese un dato válido');
+                    break;
+            }
+
+            confirm(`¡Cambio exitoso! Ahora, "${Object.keys(usuarioBusqueda)[propiedadCambio-1]}" es "${Object.values(usuarioBusqueda)[propiedadCambio-1]}"`);
+            
+        } else {
+            alert('Ingrese un dato válido');
+            propiedadCambio = Number(prompt('Escriba el número del campo que desea cambiar: \n1. Nombre \n2. Apellido \n3. Cargo \n4. Celular \n5. Email'));
+        }       
+    }
+}
+
+function edicionValueUsuario (usuarioBusqueda){
+    let cambioInfoUsuario = prompt('¿Quiere editar algún campo? SI o NO').toUpperCase();
+
+    while (cambioInfoUsuario != 'NO') {
+
+        if (cambioInfoUsuario == 'SI') {
+
+            let propiedadCambio = Number(prompt('Escriba el número del campo que desea cambiar: \n1. Nombre \n2. Apellido \n3. Cargo \n4. Celular \n5. Email'));
+
+            cambioPropiedadUsuario(usuarioBusqueda, propiedadCambio);
+
+            cambioInfoUsuario = prompt('¿Desea editar otro campo? SI o NO').toUpperCase();
+            
+        } else {
+            alert('Ingrese un dato válido');
+            cambioInfoUsuario = prompt('¿Quiere editar algún campo? SI o NO').toUpperCase();
+        } 
+    }
+}
+
 function busquedaUsuario(codigoUsuario, usuarios){
     let usuarioBusqueda = usuarios.find(a => a.codigo === codigoUsuario);
     if (usuarioBusqueda != undefined) {
@@ -34,11 +98,12 @@ function busquedaUsuario(codigoUsuario, usuarios){
         for (let propiedad in usuarioBusqueda){
             propiedadUpperCase = propiedad[0].toUpperCase() + propiedad.substring(1);
             usuarioInfo.push([`${propiedadUpperCase}: ${usuarioBusqueda[propiedad]}`]);
-            // console.log(`${propiedad}: ${usuarioBusqueda[propiedad]}`);
         }
     
         confirm(usuarioInfo.join("\n"));
-        
+
+        edicionValueUsuario(usuarioBusqueda);
+
     } else {
         alert(`El usuario con el código ${codigoUsuario} no existe en la base de datos de Onda Sonar.`);  
     }
@@ -108,7 +173,6 @@ while (opcionMenu != 4) {
     
         default:
             alert('Ingrese una opción válida (1, 2, 3 o 4)');
-
             break;
     }
 
