@@ -122,8 +122,7 @@ function eliminarUsuario(codigoUsuario, usuarios) {
                 console.log(indiceEliminar);
                 usuarios.splice(indiceEliminar,1);
                 confirm(`${usuarioEliminar.nombre} ${usuarioEliminar.apellido} ha sido eliminad@ correctamente de la base de datos de Onda Sonar.`);
-
-                eliminar = prompt('¿Desea eliminar otro usuario? SI o NO').toUpperCase(); 
+                eliminar = 'NO';
             }
             else {
                 alert('Ingrese un dato válido');
