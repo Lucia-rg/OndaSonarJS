@@ -140,7 +140,7 @@ const usuarios = [{'nombre': 'Lucía', 'apellido': 'Rodríguez', 'cargo': 'Ingen
      {'nombre': 'Sebastián', 'apellido': 'Escobar', 'cargo': 'Científico de Datos', 'celular': 3104613261, 'email': 'sescobar1029@gmail.com', 'codigo': 2}];
 
 alert('¡Bienvenido al Sistema de Gestión de Empleados de Onda Sonar!')
-let opcionMenu = Number(prompt('MENÚ DE OPCIONES \nIngrese 1 si quiere añadir un nuevo usuario. \nIngrese 2 si desea consultar la información de un usuario existente. \nIngrese 3 si desea eliminar un usuario existente. \n Ingrese 4 para salir del menú.'));
+let opcionMenu = Number(prompt('MENÚ DE OPCIONES \nIngrese 1 si quiere añadir un nuevo usuario. \nIngrese 2 si desea consultar la información de un usuario existente. \nIngrese 3 si desea eliminar un usuario existente. \nIngrese 4 para salir del menú.'));
 
 
 while (opcionMenu != 4) {

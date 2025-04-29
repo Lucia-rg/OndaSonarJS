@@ -1,16 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+     <!-- Meta -->
     <meta charset="UTF-8">
+    <meta name="author" content="Onda Sonar | Lucía Rodríguez G">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="js/script.js"></script>
-    <title>Document</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./styles/style.css">
+    <!-- Título e ícono -->
+    <title>Sistema de Gestión de Empleados | Onda Sonar</title>
+    <link rel="icon" href="./img/favicon_blanco/favicon-16x16.png" type="image/png">
 </head>
 
 <body>
 
-    <h1></h1>
-    <p>Explicación del simulador</p>
+  <section>
 
+    <h1>Sistema de Gestión de empleados</h1>
+    <h2>Onda Sonar</h2>
+    <h3>Este simulador le da una serie de opciones a los empleados de la empresa:</h3>
+
+    <div class="container">
+      <ol class="list">
+        <li>Ingresar un usuario nuevo, al cual se le solicitan los siguientes datos:</li>
+        <ul>
+          <li>Nombre</li>
+          <li>Apellido</li>
+          <li>Cargo</li>
+          <li>Celular</li>
+          <li>Email</li>
+        </ul>
+        El valor ingresado no tiene condiciones, por el momento.
+        <li>Revisar la información de un usuario específico. Para esto, el simulador pide el código del usuario. Luego de presentar la información, da la posibilidad de cambiar el valor de algún campo.</li>
+        <li>Eliminar un usuario de la base de datos. Para esto, se solicita el código del usuario a eliminar porque ya no trabaja en la empresa y se hace efectiva la eliminación. </li>
+        <li>Salir del menú y, por ende, del Sistema de Empleados.</li>
+  
+      </ol>
+
+    </div>
+
+
+
+  </section>
+
+<!-- JavaScript -->
+<script defer src="./js/script.js"></script>
 </body>
 </html>

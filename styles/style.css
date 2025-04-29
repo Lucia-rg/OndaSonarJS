@@ -1,0 +1,90 @@
+:root {
+    /* Paleta de colores */
+    --bs-focus-ring-color: rgb(58, 128, 169) !important;
+    --bs-heading-color: #4f3578 !important;
+    --bs-card-inner-border-radius: 0 !important;
+  }
+  
+  
+  @font-face {
+    font-family: "fuente-titulo";
+    src: url("./fonts/SciFly-Sans.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "fuente-cuerpo";
+    src: url("./fonts/Nunito-ExtraBold.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "fuente-cuerpo-light";
+    src: url("./fonts/Nunito-Light.ttf") format("truetype");
+  }
+  h1 {
+    font-size: 3rem !important;
+    font-family: "fuente-titulo";
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #4f3578;
+    text-align: center;
+    font-weight: bold !important;
+    margin-bottom: 0 !important;
+    padding-top: 5px !important;
+  }
+  
+  h2 {
+    font-family: "fuente-cuerpo";
+    font-size: 1.8em !important;
+    color: black !important;
+    text-align: center;
+  }
+  
+  h3 {
+    font-family: "fuente-cuerpo";
+    font-size: 1.5em !important;
+    color: rgba(44, 40, 40, 0.5) !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  h4 {
+    font-family: "fuente-cuerpo-light";
+    font-size: 2rem;
+    color: rgba(44, 40, 40, 0.5) !important;
+    font-weight: bold;
+  }
+  
+  p {
+    font-family: "fuente-cuerpo-light";
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  .estilo-bold-italic {
+    font-weight: bold;
+    font-style: italic;
+  }
+  
+  .list {
+    font-family: "fuente-cuerpo-light";
+    font-size: 18px;
+    color: rgba(44, 40, 40, 0.5);
+  }
+
+  .container {
+    width: 80%;
+  }
+
+  section {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    text-align: justify;
+    margin: 50px;
+  }
+  
+  main {
+    background-color: rgb(240, 230, 230);
+  }
+
