@@ -1,10 +1,24 @@
 // FUNCIONES
+function verificacionDatoEntrada (enunciado, minCaracteres = 3) {
+
+    let valor = prompt(enunciado);
+    console.log(typeof(valor)); 
+    while (valor =='' || valor == ' ' || valor == undefined || valor == NaN || valor.length < minCaracteres ) {
+        alert('Ingrese un dato válido');
+        valor = prompt(enunciado);   
+    }
+    return valor;
+}
+
 function usuarioNuevo (usuarios) {
-    let nombre= prompt('¿Cuál es su nombre?');
-    let apellido= prompt('¿Cuál es apellido?');
-    let cargo= prompt('¿Cuál es su cargo en Onda Sonar?');
-    let celular= prompt('¿Cuál es su número de celular?');
-    let email= prompt('¿Cuál es su correo electrónico?');
+
+    const preguntasUsuarioNuevo = ['¿Cuál es su nombre?', '¿Cuál es apellido?', '¿Cuál es su cargo en Onda Sonar?', '¿Cuál es su número de celular?', '¿Cuál es su correo electrónico?'];
+
+    let nombre = verificacionDatoEntrada(preguntasUsuarioNuevo[0]);
+    let apellido = verificacionDatoEntrada(preguntasUsuarioNuevo[1]);
+    let cargo = verificacionDatoEntrada(preguntasUsuarioNuevo[2]);
+    let celular = Number(verificacionDatoEntrada(preguntasUsuarioNuevo[3],7));
+    let email = verificacionDatoEntrada(preguntasUsuarioNuevo[4]);
     let codigo= usuarios.length+1;
 
     usuarios.push({'nombre': nombre, 'apellido': apellido, 'cargo': cargo, 'celular': celular, 'email': email, 'codigo': codigo})
