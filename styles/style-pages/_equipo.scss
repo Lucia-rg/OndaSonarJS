@@ -1,0 +1,58 @@
+@use '../mixins' as m;
+@use '../variables' as v;
+
+.equipo-container {
+    @include m.flex (row, nowrap, center, start);
+    gap: 40px;
+    padding: 50px;
+
+    @include m.media-max (1200px) {
+        @include m.flex (row, wrap, center, start);
+    }
+
+    @include m.media-max (575px) {
+        @include m.flex (row, wrap, center, center);
+        gap: 30px;
+        padding: 10px;
+    }
+}
+
+.integrante-container {
+    @include m.flex (row, nowrap, start, stretch);
+    text-align: justify;
+    gap: 30px;
+
+    img {
+        border: v.$azul solid 10px;
+        border-radius: 10%;
+        height: 300px;
+        width: auto;
+    }
+
+    @include m.media-max (1200px) {
+        @include m.flex (row, wrap, center, stretch);
+    }
+}
+
+.integrante-card {
+    width: 50%;
+
+    @include m.media-max (1200px) {
+        width: 80%;
+    }
+    
+}
+
+.linkedin-icon {
+    i {
+        color: v.$morado;
+        font-size: 1.5rem;
+        transition: all 0.2s ease;
+    }
+
+    &:hover i {
+        color: v.$azul;
+        transform: scale(1.1);
+    }
+
+}

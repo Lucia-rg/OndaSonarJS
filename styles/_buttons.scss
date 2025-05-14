@@ -1,0 +1,38 @@
+@use './variables' as v;
+@use './mixins' as m;
+
+// Botón 
+.btn {
+    color: v.$azul  !important;
+    border: v.$azul solid 2px !important;
+
+    &:hover {
+        background-color: v.$azulOp !important;
+    }
+}
+
+// Scroll to top
+
+.scroll-to-top {
+    display: flex;
+    @include m.content-center;
+    align-items: center;
+
+    position: fixed;
+    right: 20px;
+    bottom: 60px; 
+
+    transition: all 0.2 ease;
+
+    i {
+        color: v.$gris;
+        font-size: 2rem;
+        transition: all 0.2s ease;
+    }
+
+    &:hover i {
+        color: v.$azul;
+        transform: scale(1.1);
+    }
+}
+

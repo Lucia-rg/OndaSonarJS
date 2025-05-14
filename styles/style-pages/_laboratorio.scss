@@ -1,0 +1,19 @@
+@use '../mixins' as m;
+
+.seccion-laboratorio {
+    @include m.flex (row, wrap, center, center);
+    text-align: center;
+    div{
+        iframe{
+            margin: 10px;
+            width: 450px;
+            height: 300px;
+
+            @include m.media-max (575px) {
+                margin: 10px;
+                width: 330px;
+                height: 300px;
+            }
+        }
+    }
+}

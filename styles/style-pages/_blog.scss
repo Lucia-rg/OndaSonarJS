@@ -1,0 +1,12 @@
+@use '../variables' as v;
+
+.seccion-blog {
+    margin-top: 20px;
+    padding-top: 10px;
+    text-align: justify;
+    border-top: v.$azul solid 2px;
+
+    h2 {
+        text-align: start;
+    }
+}

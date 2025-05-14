@@ -1,0 +1,13 @@
+@use '../variables' as v;
+
+.card-servicios {
+    text-align: justify;
+    border: 5px solid v.$gris !important;
+}
+
+.card-img-top {
+    width: 100% !important;
+    height: 100% !important;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+}

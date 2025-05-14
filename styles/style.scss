@@ -1,0 +1,22 @@
+// Variables y mixins
+@import './variables';
+@import './mixins';
+
+// Estilos base y tipografía
+@import './tipografia';
+@import './layouts';
+
+// Componentes reutilizables
+@import './buttons';
+
+// Estilos de páginas
+@import './style-pages/header';
+@import './style-pages/footer';
+@import './style-pages/index';
+@import './style-pages/servicios';
+@import './style-pages/laboratorio';
+@import './style-pages/equipo';
+@import './style-pages/sistema-empleados';
+@import './style-pages/blog';
+@import './style-pages/contacto';
+

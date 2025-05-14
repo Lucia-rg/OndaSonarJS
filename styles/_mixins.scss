@@ -1,0 +1,26 @@
+
+@mixin flex ($direction, $wrap, $justify-content, $align-items) {
+    display: flex;
+    flex-flow: $direction $wrap;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+
+@mixin content-center {
+    justify-content: center;
+    align-content: center;
+}
+
+@mixin underline-wavy {
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+}
+
+// Responsive
+
+@mixin media-max ($breakpoint) {
+    @media (max-width: $breakpoint) {
+        @content
+    }
+}

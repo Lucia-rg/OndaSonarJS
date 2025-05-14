@@ -1,0 +1,76 @@
+// Tipografía
+@use './variables' as v;
+
+// Fuente títulos
+@font-face {
+    font-family: 'fuente-titulo';
+    src: url('./fonts/SciFly-Sans.ttf') format("truetype");
+}
+
+// Fuente cuerpo
+@font-face {
+    font-family: 'fuente-cuerpo';
+    src: url('./fonts/Nunito-ExtraBold.ttf') format('truetype');
+}
+
+// Fuente cuerpo light
+@font-face {
+    font-family: 'fuente-cuerpo-light';
+    src: url('./fonts/Nunito-Light.ttf') format('truetype');
+}
+
+// Estilos generales
+
+h1 {
+    font-size: 3rem !important;
+    font-family: "fuente-titulo";
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: v.$morado;
+    text-align: center;
+    font-weight: bold !important;
+    margin-bottom: 0 !important;
+    padding-top: 5px !important;
+}
+
+h2 {
+    font-family: "fuente-cuerpo";
+    font-size: 1.8em !important;
+    color: v.$negro !important;
+}
+
+h3 {
+    font-family: "fuente-cuerpo";
+    font-size: 1.5em !important;
+    color: v.$gris !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+h4 {
+    font-family: 'fuente-cuerpo-light';
+    font-size: 2rem;
+    color: v.$gris !important;
+    font-weight: bold;
+}
+
+p {
+    font-family: 'fuente-cuerpo-light';
+    font-size: 18px;
+    color: v.$gris;
+    font-weight: bold;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.estilo-bold-italic {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.list {
+    font-family: 'fuente-cuerpo-light';
+    font-size: 18px;
+    color: v.$gris;
+}
+

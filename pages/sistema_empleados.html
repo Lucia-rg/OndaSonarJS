@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta -->
+  <meta charset="UTF-8">
+  <meta name="author" content="Onda Sonar | Lucía Rodríguez G">
+  <meta name="description" content="Contáctanos para soluciones en acústica y control de ruido en Colombia. Encuentra nuestro correo electrónico, teléfono y dirección. ¡Escríbenos y te responderemos pronto!">
+  <meta name="keywords" content="Sistema de Gestión Onda Sonar Colombia, Expertos en acústica Colombia, Control de ruido Colombia, Soluciones acústicas Colombia, Dirección Onda Sonar, Teléfono Onda Sonar, Correo electrónico Onda Sonar, Consultoría acústica Colombia, Empresa de acústica en Colombia, Contacto para gestión de ruido.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS y Bootstrap -->
+  <link rel="stylesheet" href="../styles/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Animaciones -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <!-- Título e ícono -->
+  <title>Sistema de Gestión Onda Sonar | Expertos en Acústica y Control de Ruido en Colombia</title>
+  <link rel="icon" href="../img/favicon_blanco/favicon-Onda-Sonar.png" type="image/png">
+</head>
+
+<body>
+
+  <!-- Navegacion -->
+  <nav class="navbar navbar-expand-xl">
+    <div class="container-fluid">
+
+      <!-- Logo -->
+      <a class="navbar-brand logo" href="../index.html"><img src="../img/logo/Onda_Sonar_Logo.svg" alt="Logo Onda Sonar"></a>
+
+      <!-- Boton hamburguesa -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Paginas -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./servicios.html">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./laboratorio.html">Laboratorio</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="./equipo.html" role="button" aria-expanded="false">Equipo</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item nav-link" href="./equipo.html">Sobre nosotros</a></li>
+              <li><a class="dropdown-item nav-link" href="./sistema_empleados.html">Sistema de Gestión</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="./blog.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="./contacto.html">Contacto</a>
+          </li>
+        </ul>
+
+      </div>
+
+      <!-- Busqueda -->
+      <div class="collapse navbar-collapse justify-content-end busqueda" id="navbarSupportedContent">
+        <form class="d-flex justify-content-center" role="search">
+          <input class="form-control me-2 focus-ring" type="search" placeholder="" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+      </div>
+      
+    </div>
+  </nav>
+
+  <!-- Main-->
+  <main class="main-sistema">
+
+    <div class="contenedor-sistema">
+
+      <h1 class="animate__animated animate__pulse">Sistema de Gestión de Empleados</h1>
+      <h2 class="text-center">¡Bienvenido al equipo de Onda Sonar!</h2>
+
+      <!-- Menú principal del sistema -->
+
+      <div class="menu-sistema" id="menu-principal">
+
+        <button class="btn btn-outline-success boton-menu">Ingresar un usuario nuevo</button>
+        <button class="btn btn-outline-success boton-menu">Consultar información de un usuario</button>
+        <button class="btn btn-outline-success boton-menu">Eliminar un usuario</button>
+        <button class="btn btn-outline-success boton-menu">Salir del sistema</button>
+
+      </div>
+
+      <!-- Formulario Agregar usuario -->
+
+      <div id="registroUsuario" class="hidden ">
+
+        <h2 class="text-center">Registro de empleado nuevo</h2>
+
+        <form action="">
+
+          <div class="input-grupo">
+
+            <!-- Nombre -->
+            <div class="input-item">
+              <i class="bi bi-person"></i><label for="nombre">Nombre: </label>
+              <input type="text" id="nombreInput" name="nombre" placeholder="Nombre" required> 
+
+              <div class="error" id="nombreError"></div>
+
+            </div>
+            <!-- Apellido  -->
+            <div class="input-item">
+              <i class="bi bi-person"></i><label for="apellido">Apellido:</label>
+              <input type="text" id="apellidoInput" name="apellido" placeholder="Apellido" required> 
+
+              <div class="error" id="apellidoError"></div>
+
+            </div>
+            <!-- Cargo -->
+            <div class="input-item">
+              <i class="bi bi-briefcase"></i><label for="cargo">Cargo:</label>
+              <select name="cargo" id="cargoInput" required>
+                <option value="" disabled selected>Seleccione un cargo</option>
+                <option value="Ingeniero/a">Ingeniero/a</option>
+                <option value="Productor/a">Productor/a</option>
+                <option value="Administrativo/a">Administrativo/a</option>
+                <option value="Técnico">Técnico/a</option>
+                <option value="Practicante">Practicante</option>
+                <option value="Mantenimiento/a">Mantenimiento</option>
+              </select>
+              <div class="error" id="cargoError"></div>
+
+            </div>
+            <!-- Celular -->
+            <div class="input-item">
+
+              <i class="bi bi-phone"></i><label for="celular">Celular:</label>
+              <input type="text" id="celularInput" name="celular" placeholder="Celular" required> 
+
+              <div class="error" id="celularError"></div>
+
+            </div>
+            <!-- Email -->
+            <div class="input-item">
+
+              <i class="bi bi-envelope"></i><label for="email">Correo electrónico:</label>
+              <input type="text" id="emailInput" name="email" placeholder="Email" required> 
+
+              <div class="error" id="emailError"></div>
+
+            </div>
+
+          </div>
+
+          <div class="boton-seccion-sistema">
+            <button class="btn btn-outline-success boton-menu">Guardar empleado</button>
+            <button class="btn btn-outline-success boton-menu">Volver al menú principal</button>
+          </div>
+        </form>
+
+        <div class="mensaje-exito" id="adicionUsuarioExitosa"></div>
+
+      </div>
+
+      <!-- Formulario visualización de usuario -->
+
+      <div id="buscarUsuario" class="hidden">
+
+        <h2 class="text-center">Buscar empleado</h2>
+
+          <!-- Búsqueda -->
+          <div class="input-item">
+
+            <label for="usuarioID">Código del empleado:</label>
+            <input type="text" id="usuarioID" name="email" placeholder="Código" required> 
+
+            <div class="error" id="usuarioIDError"></div>
+
+          </div>
+
+          <div class="boton-seccion-sistema">
+            <button class="btn btn-outline-success boton-menu " >Buscar</button>
+            <button class="btn btn-outline-success boton-menu">Volver al menú principal</button>
+          </div>
+
+          <!-- Información usuario -->
+
+          <div class="hidden contenedor-info-usuario">
+
+            <div id="infoUsuario" class="info-usuario">
+              <h2 class="text-center m-3">Información del empleado</h3>
+              <p><i class="bi bi-person"></i><strong>Nombre:</strong> <span id="verNombre"></span></p>
+              <p><i class="bi bi-person"></i><strong>Apellido:</strong> <span id="verApellido"></span></p>
+              <p><i class="bi bi-hash"></i><strong>Código:</strong> <span id="verCodigo"></span></p>
+              <p><i class="bi bi-briefcase"></i><strong>Cargo:</strong> <span id="verCargo"></span></p>
+              <p><i class="bi bi-phone"></i><strong>Celular:</strong> <span id="verCelular"></span></p>
+              <p><i class="bi bi-envelope"></i><strong>Email:</strong> <span id="verEmail"></span></p>
+            </div>
+ 
+
+          </div>
+
+          <div class="boton-seccion-sistema">
+            <button class="btn btn-outline-success boton-menu ">Modificar información</button>
+            <button class="btn btn-outline-success boton-menu ">Volver al menú principal</button>
+          </div>
+
+      </div>
+
+      <!-- Modificar información de usuario -->
+
+      <div>
+        <h2 class="text-center">Modificar información</h3>
+
+        <div class="contenedor-modificar-info" style="border: red solid 2px;">
+
+          <div class="input-item">
+            
+            <label for="campoEditarUsuario">Campo a modificar:</label>
+            <select name="campoEditarUsuario" id="campoEditarUsuario" class="campoEditarUsuario" required>
+              <option value="" disabled selected>Seleccione un campo</option>
+              <option value="nombre">Nombre</option>
+              <option value="apellido">Apellido</option>
+              <option value="cargo">Cargo</option>
+              <option value="celular">Celular</option>
+              <option value="email">Correo electrónico</option>
+            </select>
+
+          </div>
+
+          <div class="input-item">
+            <label for="valorCampoEditar"></label>
+            <input type="text" name="valorCampoEditar" id="valorCampoEditar" required>
+
+            <div class="error" id="valorCampoEditarError"></div>
+          </div>
+
+
+        </div>
+
+
+        <div class="boton-seccion-sistema">
+          <button class="btn btn-outline-success boton-menu ">Actualizar información</button>
+        </div>
+
+
+        <div class="mensaje-exito" id="adicionUsuarioExitosa"></div>
+
+      </div>
+
+      <!-- Eliminar usuario -->
+
+      <div id="eliminarUsuario" class="hidden">
+        <h2>Eliminar empleado</h2>
+
+        <div class="input-item">
+
+          <label for="eliminarUsuarioID">Código del empleado a eliminar:</label>
+          <input type="text" id="eliminarUsuarioID" name="eliminarUsuarioID" placeholder="Código" required> 
+
+          <div class="error" id="eliminarUsuarioIDError"></div>
+
+        </div>
+
+        <div class="boton-seccion-sistema">
+          <button class="btn btn-outline-success boton-menu">Eliminar</button>
+          <button class="btn btn-outline-success boton-menu">Volver al menú principal</button>
+          <div class="mensaje-exito" id="adicionUsuarioExitosa"></div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+  </main>
+
+  <!-- Redes sociales -->
+  <div class="container-fluid redes-sociales-container">
+
+    <img class="footer-logo" src="../img/logo/Isotipo-Onda-Sonar.svg" alt="Isotipo Onda Sonar">
+    <h2>Creemos un proyecto juntos</h2>
+    <h4>¡No te pierdas nada y únete a nuestra comunidad!</h4>
+
+    <!-- Iconos redes sociales -->
+    <div class="d-flex flex-wrap align-items-center justify-content-center redes-sociales-footer">
+      <a href="https://www.instagram.com/ondasonar/" target="_blank"><img src="../img/redes_sociales/instagram.png" alt="Instagram Onda Sonar"></a>
+      <a href="https://x.com/?mx=2" target="_blank"><img src="../img/redes_sociales/x.png" alt="X Onda Sonar" ></a>
+      <a href="https://web.whatsapp.com/" target="_blank"><img src="../img/redes_sociales/whatsapp.png" alt="WhatsApp Onda Sonar"></a>
+      <a href="https://www.youtube.com/" target="_blank"><img src="../img/redes_sociales/youtube.png" alt="YouTube Onda Sonar"></a>
+    </div>
+
+  </div>
+  
+  <!-- Footer -->
+  <footer>
+
+    <div class="container footer-info">
+
+      <div class="row justify-content-center align-content-center">
+  
+        <div class="col-md-4 col-sm-5 col-xs-12 mt-2">
+
+          <h2>Contáctanos</h2> 
+          <p>Dirección</p>
+          <a href="https://maps.app.goo.gl/dqByQF2ZJSJD42v5A" class="link"  target="_blank">Calle 45E #77A - 75. Medellín, Colombia.</a>
+          <p>Correo electrónico</p>
+          <a href="mailto:ondasonar@gmail.com" class="link">ondasonar@gmail.com</a>
+          <p>Teléfono</p>
+          <a href="https://web.whatsapp.com/" target="_blank" class="link">(+57) 301 409 42 01</a> 
+                
+        </div>
+  
+        <div class="col-md-3 col-sm-5 col-xs-12 mt-2">
+          <h2>Información</h2>
+          <ul class="nav-footer">
+            <li>
+              <a class="link" href="../index.html">Inicio</a>
+            </li>
+            <li>
+              <a class="link" href="./servicios.html">Servicios</a>
+            </li>
+            <li>
+              <a class="link" href="./laboratorio.html">Laboratorio</a>
+            </li>
+            <li>
+              <a class="link" href="./equipo.html">Equipo</a>
+            </li>
+            <li>
+              <a class="link" href="./blog.html">Blog</a>
+            </li>
+            <li>
+              <a class="link" aria-current="page" href="./contacto.html">Contacto</a>
+            </li>
+          </ul>
+        </div>
+
+         <!-- Scroll to top -->
+
+        <div class="d-flex align-items-center justify-content-center">
+          <a href="#top" class="scroll-to-top">
+            <i class="bi bi-arrow-up-circle"></i>
+          </a>
+        </div>
+
+      </div>
+  
+    </div>
+
+    <!-- Derechos de autor -->
+    <div class="mt-4">
+      <p class="derechos-reservados">&#169; 2025 Onda Sonar. Todos los derechos reservados.</p>
+    </div>
+
+  </footer>
+
+  <!-- Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+</body>
+</html>

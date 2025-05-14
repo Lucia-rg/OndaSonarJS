@@ -1,0 +1,79 @@
+@use '../variables' as v;
+@use '../tipografia';
+@use '../mixins' as m;
+
+
+// Redes sociales
+.redes-sociales-container {
+    background-color: v.$fondoContenido;
+    padding: 20px;
+    text-align: center;
+    border-top: 3px solid v.$gris;
+}
+
+.footer-logo {
+    height: 80px;
+    width: 80px;
+    margin: 10px;
+}
+
+.redes-sociales-footer {
+    a {
+        margin: 20px;
+    }
+
+    img {
+        width: 40px;
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+}
+
+//Footer
+
+footer {
+    padding: 10px;
+    text-align: center;
+    background-color: v.$fondo;
+    border-top: 3px solid v.$gris;
+}
+
+.footer-info {
+    text-align: start;
+    justify-content: center;
+
+    @include m.media-max (575px) {
+        text-align: center !important;
+        place-content: center !important;
+    }
+}
+
+//Links footer
+.nav-footer {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0 !important;
+}
+
+.link {
+    text-decoration: none;
+    font-size: 18px;
+    color: v.$gris;
+    transition: color 0.3s ease;
+    font-family: 'fuente-cuerpo-light';
+
+    &:hover {
+        color: v.$azul;
+        font-weight: 600;
+    }
+}
+
+.derechos-reservados {
+    font-size: 17px;
+    color: v.$gris;
+    text-align: center;
+    opacity: 70%;
+    margin: 20px;
+}

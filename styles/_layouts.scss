@@ -1,0 +1,11 @@
+@use './variables' as v;
+@use './mixins' as m;
+
+section {
+    @include m.flex (column, nowrap, center, center);
+    text-align: center;
+}
+
+main {
+    background-color: v.$fondo;
+}

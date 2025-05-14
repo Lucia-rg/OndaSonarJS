@@ -1,0 +1,229 @@
+@use '../mixins' as m;
+@use '../variables' as v;
+@use '../tipografia';
+
+$borde-sistema: rgb(43, 40, 44);
+$color-formulario: rgba(255, 255, 255, 0.4);
+
+.main-sistema {
+    padding: 10px;
+    @include m.flex (column, wrap, center, center);
+}
+
+.contenedor-sistema {
+
+    background-color: v.$azulOp;
+    border: v.$azul solid 10px;
+    border-radius: 40px;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 70%;
+
+    @include m.media-max(1380px) {
+        width: 80%;
+    }
+
+    @include m.media-max(433px) {
+        width: 90%;
+        padding: 10px;
+    }
+}
+
+.menu-sistema {
+    @include m.flex (row, nowrap, center, center);
+    gap: 30px;
+    padding: 10px;
+
+    @include m.media-max(1210px) {
+        @include m.flex (column, nowrap, center, center);
+        gap: 10px;
+        padding: 10px;
+    }
+
+    @include m.media-max(600px) {
+        @include m.flex (column, nowrap, center, center);
+        gap: 10px;
+        padding: 2px;
+    }
+
+}
+
+.boton-menu {
+    background-color: v.$blanco!important;
+    border-color: v.$morado !important;
+    font-family: "fuente-cuerpo" !important;
+    color: v.$morado !important;
+    @include m.content-center;
+    text-align: center;
+    align-items: center;
+    border-width: 3px !important;
+    height: 80px;
+    width: 30%;
+    padding: 10px;
+
+    &:hover {
+        background-color: v.$morado !important;
+        color: v.$blanco !important;
+    }
+    
+
+    @include m.media-max(1210px) {
+        width: 80%;
+        height: 50px;
+    }
+
+    @include m.media-max(600px) {
+        width: 90%;
+        height: 55px
+    }
+
+}
+
+.boton-seccion-sistema {
+    @include m.flex (row, nowrap, center, center);
+    padding: 10px;
+    margin: 20px;
+    gap: 30px;
+
+    @include m.media-max(740px) {
+        @include m.flex (column, nowrap, center, center);
+        width: 90%;
+    }
+}
+
+// Registro nuevo empleado
+
+.input-grupo {
+    margin: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input-item {
+    margin: 10px;
+    i {
+        margin-right: 8px;
+
+    }
+}
+
+input {
+
+    font-family: 'fuente-cuerpo-light';
+    color: black;
+    border: v.$azul solid 2px;
+    border-radius: 5px;
+    padding: 8px;
+    margin: 10px 0;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: v.$blanco;
+
+    &:focus {
+        outline: v.$morado solid 2px;
+        outline-offset: -2px;
+        }
+
+}
+
+select {
+
+    font-family: 'fuente-cuerpo-light';
+    padding: 8px;
+    border: v.$azul solid 2px;
+    border-radius: 5px;
+    background-color: v.$blanco;
+    color: v.$gris;
+    cursor: pointer;
+    width: 100%;
+
+    &:focus {
+        outline: v.$morado solid 2px;
+        outline-offset: -2px;
+    }
+
+    &:valid {
+        color: black;
+    }
+
+    option {
+        background-color: v.$blanco;
+        color: black;
+        z-index: 100;
+
+        &:hover {
+            background-color: v.$morado !important;
+            color: v.$blanco;
+            cursor:  pointer !important;
+        }
+
+        &:checked {
+            background-color: v.$azul;
+            color: v.$blanco;
+        }
+
+    }
+
+}
+
+// Información usuario
+
+.contenedor-info-usuario {
+
+    @include m.flex (column, nowrap, center, center);
+    padding: 10px;
+    margin: 20px;
+
+}
+
+.info-usuario {
+    @include m.content-center;
+    background-color: v.$morado;
+    border-radius: 40px;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    width: fit-content;
+    
+    h2{
+        color: v.$blanco !important;
+        margin-bottom: 20px !important;
+    }
+      
+    p {
+        color: v.$blanco !important;
+        padding-left: 15% !important;
+        margin-bottom: 20px !important;
+
+        i {
+            margin-right: 8px;
+        }
+
+    }
+    
+
+    &:hover {
+        transform: scale(1.02);
+        transition: all 0.3s ease;
+    }
+}
+
+// Modificar información de usuario
+
+.contenedor-modificar-info {
+
+    @include m.flex (row, nowrap, center, center);
+    padding: 10px;
+    margin: 20px;
+
+}
+
+.campoEditarUsuario {
+    width: fit-content;
+}
+

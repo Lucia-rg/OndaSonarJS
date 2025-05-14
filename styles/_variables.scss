@@ -1,0 +1,21 @@
+// Paleta de colores
+
+$azul: rgb(58, 128, 169);
+$blanco: rgb(255, 255, 255);
+$azulOp: rgba(180, 209, 226, 0.5);
+$morado: #4f3578;
+$moradoOp: rgba(79, 53, 120, 0.5);
+$gris: rgba(44, 40, 40, 0.5);
+$fondo: rgb(240, 230, 230);
+$fondoContenido: #EEEAEA; 
+$fondoOp: rgba(240, 230, 230, 0.5);
+$negro: black;
+$focusRing: rgba(44, 40, 40, 0.1);
+
+:root {
+    /* Paleta de colores */
+    --bs-focus-ring-color: #{$azul} !important;
+    --bs-heading-color: #{$morado} !important;
+    --bs-card-inner-border-radius: 0 !important;
+    // --bs-navbar-active-color: #{$azul} !important;
+}

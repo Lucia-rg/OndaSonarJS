@@ -1,0 +1,38 @@
+@use '../variables' as v;
+@use '../tipografia';
+@use '../mixins' as m;
+@use '../buttons';
+@use '../layouts';
+
+.hero-inicio {
+    background-color: v.$fondoOp;
+    text-align: center;
+    padding: 3rem;
+    position: absolute;
+}
+
+.hero-info {
+    max-width: 80%;
+}
+
+.hero-video {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+}
+
+.btn-hero {
+    background-color: v.$fondo !important;
+    font-family: "fuente-cuerpo" !important;
+    @include m.content-center;
+    text-align: center;
+    align-items: center;
+
+    @include m.media-max (512px) {
+        height: 75px;
+        width: 50%;
+        text-align: center;
+        justify-content: center;
+        padding: 1px !important;
+    }
+}
