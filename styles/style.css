@@ -270,11 +270,11 @@ p {
 
 .dropdown-item {
   background-color: #fff !important;
+  padding: 10px !important;
 }
 
 .dropdown-menu {
   border: rgba(44, 40, 40, 0.5) solid 2px !important;
-  padding: 5px;
 }
 @media (max-width: 1200px) {
   .dropdown-menu {
@@ -802,6 +802,18 @@ p {
   }
 }
 
+.contenedor-seccion {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+}
+
 .menu-sistema {
   display: flex;
   flex-flow: row nowrap;
@@ -867,22 +879,25 @@ p {
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
+  width: 90%;
   padding: 10px;
   margin: 20px;
   gap: 30px;
 }
-@media (max-width: 740px) {
+@media (max-width: 750px) {
   .boton-seccion-sistema {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
     width: 90%;
+    gap: 10px;
   }
 }
 
 .input-grupo {
-  margin: 15px;
+  width: 100%;
+  margin: 0 !important;
 }
 
 label {
@@ -946,15 +961,6 @@ select option:checked {
   color: rgb(255, 255, 255);
 }
 
-.contenedor-info-usuario {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  margin: 20px;
-}
-
 .info-usuario {
   justify-content: center;
   align-content: center;
@@ -963,7 +969,9 @@ select option:checked {
   margin: 20px;
   padding: 20px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  width: fit-content;
+  width: 500px;
+  overflow-wrap: break-word;
+  text-align: justify;
 }
 .info-usuario h2 {
   color: rgb(255, 255, 255) !important;
@@ -971,7 +979,7 @@ select option:checked {
 }
 .info-usuario p {
   color: rgb(255, 255, 255) !important;
-  padding-left: 15% !important;
+  padding-left: 10px !important;
   margin-bottom: 20px !important;
 }
 .info-usuario p i {
@@ -981,18 +989,64 @@ select option:checked {
   transform: scale(1.02);
   transition: all 0.3s ease;
 }
+@media (max-width: 970px) {
+  .info-usuario {
+    width: 80%;
+  }
+}
+@media (max-width: 740px) {
+  .info-usuario {
+    width: 90%;
+  }
+}
+
+.contenedor-buscar-usuario {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
 
 .contenedor-modificar-info {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column wrap;
   justify-content: center;
   align-items: center;
-  padding: 10px;
-  margin: 20px;
 }
 
 .campoEditarUsuario {
   width: fit-content;
+  margin-left: 10px;
+}
+@media (max-width: 575px) {
+  .campoEditarUsuario {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+.valorCampoEditar {
+  width: 100%;
+  padding: 0;
+  margin-left: 0;
+}
+
+.inputCampoEditar {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  margin-left: 0;
+}
+@media (max-width: 575px) {
+  .inputCampoEditar {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: start;
+  }
 }
 
 :root {

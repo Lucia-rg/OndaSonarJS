@@ -97,11 +97,11 @@
 
       <!-- Formulario Agregar usuario -->
 
-      <div id="registroUsuario" class="hidden ">
+      <div id="registroUsuario" class="hidden contenedor-seccion">
 
         <h2 class="text-center">Registro de empleado nuevo</h2>
 
-        <form action="">
+        <form action="" class="input-grupo">
 
           <div class="input-grupo">
 
@@ -157,11 +157,12 @@
 
           </div>
 
+        </form>
+
           <div class="boton-seccion-sistema">
             <button class="btn btn-outline-success boton-menu">Guardar empleado</button>
             <button class="btn btn-outline-success boton-menu">Volver al menú principal</button>
           </div>
-        </form>
 
         <div class="mensaje-exito" id="adicionUsuarioExitosa"></div>
 
@@ -169,57 +170,57 @@
 
       <!-- Formulario visualización de usuario -->
 
-      <div id="buscarUsuario" class="hidden">
+      <div id="buscarUsuario" class="hidden contenedor-seccion">
 
         <h2 class="text-center">Buscar empleado</h2>
 
-          <!-- Búsqueda -->
-          <div class="input-item">
+        <!-- Búsqueda -->
+        <div class="input-item">
 
-            <label for="usuarioID">Código del empleado:</label>
-            <input type="text" id="usuarioID" name="email" placeholder="Código" required> 
+          <i class="bi bi-hash"></i><label for="usuarioID">Código del empleado:</label>
+          <input type="text" id="usuarioID" name="email" placeholder="Código" required> 
 
-            <div class="error" id="usuarioIDError"></div>
+          <div class="error" id="usuarioIDError"></div>
 
-          </div>
+        </div>
 
-          <div class="boton-seccion-sistema">
+        <div class="boton-seccion-sistema">
             <button class="btn btn-outline-success boton-menu " >Buscar</button>
             <button class="btn btn-outline-success boton-menu">Volver al menú principal</button>
-          </div>
+        </div>
 
-          <!-- Información usuario -->
+      </div>
 
-          <div class="hidden contenedor-info-usuario">
+      <!-- Información usuario -->
 
-            <div id="infoUsuario" class="info-usuario">
-              <h2 class="text-center m-3">Información del empleado</h3>
-              <p><i class="bi bi-person"></i><strong>Nombre:</strong> <span id="verNombre"></span></p>
-              <p><i class="bi bi-person"></i><strong>Apellido:</strong> <span id="verApellido"></span></p>
-              <p><i class="bi bi-hash"></i><strong>Código:</strong> <span id="verCodigo"></span></p>
-              <p><i class="bi bi-briefcase"></i><strong>Cargo:</strong> <span id="verCargo"></span></p>
-              <p><i class="bi bi-phone"></i><strong>Celular:</strong> <span id="verCelular"></span></p>
-              <p><i class="bi bi-envelope"></i><strong>Email:</strong> <span id="verEmail"></span></p>
-            </div>
- 
+      <div id="infoUsuario"  class="hidden contenedor-seccion">
 
-          </div>
+        <div id="input-grupo infoUsuario" class="info-usuario">
+          <h2 class="text-center m-3">Información del empleado</h3>
+          <p><i class="bi bi-person"></i><strong>Nombre:</strong> <span id="verNombre"></span></p>
+          <p><i class="bi bi-person"></i><strong>Apellido:</strong> <span id="verApellido"></span></p>
+          <p><i class="bi bi-hash"></i><strong>Código:</strong> <span id="verCodigo"></span></p>
+          <p><i class="bi bi-briefcase"></i><strong>Cargo:</strong> <span id="verCargo"></span></p>
+          <p><i class="bi bi-phone"></i><strong>Celular:</strong> <span id="verCelular"></span></p>
+          <p><i class="bi bi-envelope"></i><strong>Email:</strong> <span id="verEmail"></span></p>
+        </div>
 
-          <div class="boton-seccion-sistema">
+
+        <div class="boton-seccion-sistema">
             <button class="btn btn-outline-success boton-menu ">Modificar información</button>
             <button class="btn btn-outline-success boton-menu ">Volver al menú principal</button>
-          </div>
+        </div>
 
       </div>
 
       <!-- Modificar información de usuario -->
 
-      <div>
+      <div id="modificarUsuario" class="hidden contenedor-seccion">
         <h2 class="text-center">Modificar información</h3>
 
-        <div class="contenedor-modificar-info" style="border: red solid 2px;">
+        <div class="contenedor-modificar-info">
 
-          <div class="input-item">
+          <div class="input-item inputCampoEditar">
             
             <label for="campoEditarUsuario">Campo a modificar:</label>
             <select name="campoEditarUsuario" id="campoEditarUsuario" class="campoEditarUsuario" required>
@@ -233,9 +234,8 @@
 
           </div>
 
-          <div class="input-item">
-            <label for="valorCampoEditar"></label>
-            <input type="text" name="valorCampoEditar" id="valorCampoEditar" required>
+          <div class="input-item valorCampoEditar">
+            <input type="text" name="valorCampoEditar" id="valorCampoEditar" placeholder="Nueva información" required>
 
             <div class="error" id="valorCampoEditarError"></div>
           </div>
@@ -255,12 +255,12 @@
 
       <!-- Eliminar usuario -->
 
-      <div id="eliminarUsuario" class="hidden">
-        <h2>Eliminar empleado</h2>
+      <div id="eliminarUsuario" class="hidden contenedor-seccion" >
+        <h2 class="text-center">Eliminar empleado</h2>
 
         <div class="input-item">
 
-          <label for="eliminarUsuarioID">Código del empleado a eliminar:</label>
+          <i class="bi bi-hash"></i><label for="eliminarUsuarioID">Código del empleado a eliminar:</label>
           <input type="text" id="eliminarUsuarioID" name="eliminarUsuarioID" placeholder="Código" required> 
 
           <div class="error" id="eliminarUsuarioIDError"></div>
@@ -276,8 +276,6 @@
       </div>
 
     </div>
-
-
 
   </main>
 

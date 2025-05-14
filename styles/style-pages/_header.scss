@@ -41,11 +41,11 @@
 // Menú desplegable
 .dropdown-item {
     background-color: #fff !important;
+    padding: 10px !important;
 }
 
 .dropdown-menu {
     border: v.$gris solid 2px !important;
-    padding: 5px;
 
     @include m.media-max (1200px) {
         max-width: fit-content;

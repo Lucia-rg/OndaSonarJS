@@ -11,7 +11,6 @@ $color-formulario: rgba(255, 255, 255, 0.4);
 }
 
 .contenedor-sistema {
-
     background-color: v.$azulOp;
     border: v.$azul solid 10px;
     border-radius: 40px;
@@ -28,6 +27,15 @@ $color-formulario: rgba(255, 255, 255, 0.4);
         width: 90%;
         padding: 10px;
     }
+}
+
+.contenedor-seccion {
+    @include m.flex (column, wrap, center, center);
+    align-items: center;
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box;
 }
 
 .menu-sistema {
@@ -82,20 +90,23 @@ $color-formulario: rgba(255, 255, 255, 0.4);
 
 .boton-seccion-sistema {
     @include m.flex (row, nowrap, center, center);
+    width: 90%;
     padding: 10px;
     margin: 20px;
     gap: 30px;
 
-    @include m.media-max(740px) {
+    @include m.media-max(750px) {
         @include m.flex (column, nowrap, center, center);
         width: 90%;
+        gap: 10px;
     }
 }
 
 // Registro nuevo empleado
 
 .input-grupo {
-    margin: 15px;
+    width: 100%;
+    margin: 0 !important;
 }
 
 label {
@@ -171,15 +182,9 @@ select {
 
 }
 
+// Registro usuario
+
 // Información usuario
-
-.contenedor-info-usuario {
-
-    @include m.flex (column, nowrap, center, center);
-    padding: 10px;
-    margin: 20px;
-
-}
 
 .info-usuario {
     @include m.content-center;
@@ -188,7 +193,9 @@ select {
     margin: 20px;
     padding: 20px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    width: fit-content;
+    width: 500px;
+    overflow-wrap: break-word;
+    text-align: justify;
     
     h2{
         color: v.$blanco !important;
@@ -197,7 +204,7 @@ select {
       
     p {
         color: v.$blanco !important;
-        padding-left: 15% !important;
+        padding-left: 10px !important;
         margin-bottom: 20px !important;
 
         i {
@@ -205,25 +212,58 @@ select {
         }
 
     }
-    
 
     &:hover {
         transform: scale(1.02);
         transition: all 0.3s ease;
     }
+
+    @include m.media-max(970px) {
+        width: 80%;
+    }
+
+    @include m.media-max(740px) {
+        width: 90%;
+    }
+}
+
+// Buscar usuario
+.contenedor-buscar-usuario {
+    @include m.container-center-flex (column, nowrap);
 }
 
 // Modificar información de usuario
 
 .contenedor-modificar-info {
-
-    @include m.flex (row, nowrap, center, center);
-    padding: 10px;
-    margin: 20px;
-
+    @include m.flex (column, wrap, center, center);
 }
 
 .campoEditarUsuario {
     width: fit-content;
+    margin-left: 10px;
+
+
+    @include m.media-max(575px) {
+        width: 100%;
+        margin-left: 0;
+    }
 }
 
+.valorCampoEditar {
+    width: 100%;
+    padding: 0;
+    margin-left: 0;
+
+}
+
+.inputCampoEditar {
+    @include m.flex (row, wrap, space-between, center);
+    width: 100%;
+    padding: 0;
+    margin-left: 0;
+
+    @include m.media-max(575px) {
+        @include m.flex (row, wrap, space-between, start);
+    }
+
+}
