@@ -10,6 +10,12 @@ $color-formulario: rgba(255, 255, 255, 0.4);
     @include m.flex (column, wrap, center, center);
 }
 
+.contenedor-forms {
+    h2 {
+        margin-top: 5px;
+    }
+}
+
 .contenedor-sistema {
     background-color: v.$azulOp;
     border: v.$azul solid 10px;
@@ -266,4 +272,8 @@ select {
         @include m.flex (row, wrap, space-between, start);
     }
 
+}
+
+.hidden {
+    display: none !important;
 }

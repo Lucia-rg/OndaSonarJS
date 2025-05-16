@@ -781,6 +781,10 @@ p {
   align-items: center;
 }
 
+.contenedor-forms h2 {
+  margin-top: 5px;
+}
+
 .contenedor-sistema {
   background-color: rgba(180, 209, 226, 0.5);
   border: rgb(58, 128, 169) solid 10px;
@@ -1047,6 +1051,10 @@ select option:checked {
     justify-content: space-between;
     align-items: start;
   }
+}
+
+.hidden {
+  display: none !important;
 }
 
 :root {
