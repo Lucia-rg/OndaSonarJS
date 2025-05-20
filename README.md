@@ -52,7 +52,7 @@ Los códigos de usuario siguen el siguiente formato:
 - Los IDs son **asignados automáticamente** al registrar un usuario
 - Los IDs **no deben modificarse** manualmente
 
-  ## 📋 Códigos existentes en LocalStorage
+## 📋 Códigos existentes en LocalStorage
   - LR-10
   - SE-11
 
