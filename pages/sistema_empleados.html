@@ -177,17 +177,19 @@
           <h2 class="text-center">Buscar empleado</h2>
 
           <!-- Búsqueda -->
-          <div class="input-item">
+          <div id="form-infoUsuario" class="input-item" >
 
             <i class="bi bi-hash"></i><label for="usuarioID">Código del empleado:</label>
             <input type="text" id="usuarioID" name="email" placeholder="Código" required> 
 
-            <div class="error" id="usuarioIDError"></div>
+            <div class="error hidden" id="usuarioIDError"></div>
 
           </div>
 
+          <div class="mensajeDiv hidden" id="searchUsuario"></div>
+
           <div class="boton-seccion-sistema">
-              <button class="btn btn-outline-success boton-menu " >Buscar</button>
+              <button class="btn btn-outline-success boton-menu" id="btn-buscar" >Buscar</button>
               <button class="btn btn-outline-success boton-menu showMainMenu">Volver al menú principal</button>
           </div>
 

@@ -6,7 +6,7 @@ const usuariosIniciales = [
         'celular': '3014094201',
         'email': 'lucia.rodg28@gmail.com',
         'fechaRegistro' : '2025-05-16',
-        'codigo': 1
+        'id': 1
     },
     {
         'nombre': 'Sebastián',
@@ -15,7 +15,7 @@ const usuariosIniciales = [
         'celular': '3104613261',
         'email': 'sescobar1029@gmail.com',
         'fechaRegistro' : '2025-05-16',
-        'codigo': 2
+        'id': 2
     }
 ];
 
@@ -89,7 +89,6 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('.mensajeDiv').forEach( mensaje => {
             mensaje.classList.add('hidden');
             mensaje.innerHTML = '';
-
         });
 
         // Limpiar errores previos 
@@ -245,7 +244,6 @@ class Validador {
     
 }
 
-
 // Registro de usuario
 let registroUsuario = document.getElementById('btn-guardar');
 
@@ -287,7 +285,7 @@ registroUsuario.addEventListener('click', (e) => {
             <p>ID asignado: <strong>${usuario.id}</strong></p>
             <p>Fecha de registro: ${usuario.fechaRegistro}</p>`;
 
-            resetForm(form, mensajeDiv);
+            resetForm(form);
 
         } else {
             alert('Error al guardar usuario');
@@ -299,9 +297,114 @@ registroUsuario.addEventListener('click', (e) => {
         mensajeDiv.innerHTML = `
         ❌ Error: asegúrese de llenar correctamente los campos.`;       
     }
-})
+});
 
-function resetForm (form, mensajeDiv) {
+
+
+// Buscar usuario
+
+let searchUsuario = document.getElementById('btn-buscar');
+
+searchUsuario.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const mensajeDiv = document.getElementById('searchUsuario');
+    const mensaje = document.getElementById('usuarioIDError');
+
+    // Limpiar errores previos 
+    document.querySelectorAll('.error').forEach(error => {
+        error.classList.add('hidden');
+        error.innerHTML = '';
+    });
+
+        document.querySelectorAll('.mensajeDiv').forEach(error => {
+        error.classList.add('hidden');
+        error.innerHTML = '';
+    });
+
+    if (errores.length > 0) {
+        errores = [];
+    }
+
+    // -------------------------------------------
+
+    try {
+        const idBuscar = Validador.validarTexto(document.getElementById('usuarioID').value, 'código', 1, 'usuarioIDError');
+
+        if (errores.length == 0) {
+            infoEmpleado = getUsuarioPorId(Number(idBuscar));
+            console.log(infoEmpleado);
+
+            if (infoEmpleado == undefined) {  
+                mensaje.classList.remove('hidden');
+                mensaje.innerHTML = `El usuario con el código ${idBuscar} no existe en la base de datos de Onda Sonar.`;
+                throw new Error('El usuario no existe.');
+            } else {
+                showInnerForm ('infoUsuario')
+                document.getElementById('verNombre').innerText = infoEmpleado.nombre;
+                document.getElementById('verApellido').innerText = infoEmpleado.apellido;
+                document.getElementById('verCodigo').innerText = infoEmpleado.id;
+                document.getElementById('verCargo').innerText = infoEmpleado.cargo;
+                document.getElementById('verCelular').innerText = infoEmpleado.celular;
+                document.getElementById('verEmail').innerText = infoEmpleado.email;
+            }
+
+        } else {
+            errores = [];
+            throw new Error(`Debe llenar correctamente el campo.`); 
+        }
+
+        document.getElementById('usuarioID').value = '';
+        
+    } catch (error) {
+
+        mensajeDiv.classList.remove('hidden');
+        mensajeDiv.innerHTML = `
+        ❌ Error: asegúrese de llenar correctamente los campos.`; 
+        
+    }
+});
+
+function getUsuarioPorId (id) {
+
+    const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
+    return usuarios.find(empleado => empleado.id === id);
+
+}
+
+function showInnerForm (formId) {
+      // Ocultar formularios
+        document.querySelectorAll('.contenedor-forms').forEach(form => {
+            form.classList.add('hidden');
+        });
+
+        document.getElementById('greet').classList.add('hidden');
+
+        document.querySelectorAll('.mensajeDiv').forEach( mensaje => {
+            mensaje.classList.add('hidden');
+            mensaje.innerHTML = '';
+        });
+
+        // Limpiar errores previos 
+        document.querySelectorAll('.error').forEach(error => {
+                error.classList.add('hidden');
+                error.innerHTML = '';
+            });
+
+        // Mostrar formulario
+        const formShow = document.getElementById(formId);
+        if (formShow) {
+            formShow.classList.remove('hidden');
+        }
+
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+
+};
+
+function resetForm (form) {
     setTimeout(() => {
         form.reset();
     }, 7000);
