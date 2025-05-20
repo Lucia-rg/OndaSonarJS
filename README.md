@@ -21,6 +21,41 @@ Portafolio de Ingeniería de Sonido, con enfoque en acústica arquitectónica, c
 5. **Acceso directo**:  
    La URL directa es:  
    `https://lucia-rg.github.io/OndaSonarJS/pages/sistema_empleados.html`
+
+## 🆔 Estructura del código de Usuario
+
+Los códigos de usuario siguen el siguiente formato:
+### Componentes:
+
+1. **Inicial del Nombre**  
+   - Primera letra del nombre en mayúscula  
+   - Ejemplo: "Lucía" → `L`
+
+2. **Inicial del Apellido**  
+   - Primera letra del primer apellido en mayúscula  
+   - Ejemplo: "Rodríguez" → `R`
+
+3. **Número Aleatorio**  
+   - Dos dígitos generados aleatoriamente (10-99)  
+   - Ejemplo: `45`
+
+## 📋 Ejemplos Prácticos
+
+| Nombre Completo    | ID Generado |
+|--------------------|-------------|
+| María González     | MG-72       |
+| Pedro Sánchez      | PS-36       |
+| Laura Fernández    | LF-89       |
+
+## ℹ Información Adicional
+
+- Los IDs son **asignados automáticamente** al registrar un usuario
+- Los IDs **no deben modificarse** manualmente
+
+  ## 📋 Códigos existentes en LocalStorage
+  - LR-10
+  - SE-11
+
 ## AUTOR
 
 - [@Lucia](https://github.com/Lucia-rg)
