@@ -9,17 +9,17 @@ Portafolio de Ingeniería de Sonido, con enfoque en acústica arquitectónica, c
    Haz clic en [este enlace](https://lucia-rg.github.io/OndaSonarJS/) o escribe la URL en tu navegador.
 
 2. **Localiza el menú principal**:  
-   En la parte superior/izquierda de la pantalla verás el menú principal con opciones como "Inicio", "Servicios", etc.
+   En la parte superior de la pantalla verás el menú principal con opciones como "INICIO", "SERVICIOS", etc.
 
 3. **Abre el menú desplegable**:  
-   - *Versión escritorio*: Coloca el cursor sobre **"EQUIPO"** 
+   - *Versión escritorio*: Toca con el cursor sobre **"EQUIPO"** 
    - *Versión móvil*: Toca el icono ☰ (tres líneas) y luego selecciona **"EQUIPO"**
 
 4. **Selecciona la página**:  
    En el menú que se despliega, haz clic en **"SISTEMA DE GESTIÓN"**
 
 5. **Acceso directo**:  
-   Si conoces la URL directa, puedes usar:  
+   La URL directa es:  
    `https://lucia-rg.github.io/OndaSonarJS/pages/sistema_empleados.html`
 ## AUTOR
 
