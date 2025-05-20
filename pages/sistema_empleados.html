@@ -103,7 +103,7 @@
 
           <h2 class="text-center">Registro de empleado nuevo</h2>
 
-          <form action="" class="input-grupo">
+          <form id="form-registro" action="" class="input-grupo">
 
             <div class="input-grupo">
 
@@ -112,7 +112,7 @@
                 <i class="bi bi-person"></i><label for="nombre">Nombre: </label>
                 <input type="text" id="nombreInput" name="nombre" placeholder="Nombre" required> 
 
-                <div class="error" id="nombreError"></div>
+                <div class="error hidden" id="nombreError"></div>
 
               </div>
               <!-- Apellido  -->
@@ -120,7 +120,7 @@
                 <i class="bi bi-person"></i><label for="apellido">Apellido:</label>
                 <input type="text" id="apellidoInput" name="apellido" placeholder="Apellido" required> 
 
-                <div class="error" id="apellidoError"></div>
+                <div class="error hidden" id="apellidoError"></div>
 
               </div>
               <!-- Cargo -->
@@ -135,7 +135,7 @@
                   <option value="Practicante">Practicante</option>
                   <option value="Mantenimiento/a">Mantenimiento</option>
                 </select>
-                <div class="error" id="cargoError"></div>
+                <div class="error hidden" id="cargoError"></div>
 
               </div>
               <!-- Celular -->
@@ -144,7 +144,7 @@
                 <i class="bi bi-phone"></i><label for="celular">Celular:</label>
                 <input type="text" id="celularInput" name="celular" placeholder="Celular" required> 
 
-                <div class="error" id="celularError"></div>
+                <div class="error hidden" id="celularError"></div>
 
               </div>
               <!-- Email -->
@@ -153,7 +153,7 @@
                 <i class="bi bi-envelope"></i><label for="email">Correo electrónico:</label>
                 <input type="email" id="emailInput" name="email" placeholder="Email" required> 
 
-                <div class="error" id="emailError"></div>
+                <div class="error hidden" id="emailError"></div>
 
               </div>
 
@@ -161,12 +161,12 @@
 
           </form>
 
-            <div class="boton-seccion-sistema">
-              <button class="btn btn-outline-success boton-menu" type="submit">Guardar empleado</button>
-              <button class="btn btn-outline-success boton-menu showMainMenu">Volver al menú principal</button>
-            </div>
+          <div class="mensajeDiv hidden" id="adicionUsuario"></div>
 
-          <div class="mensaje-exito" id="adicionUsuarioExitosa"></div>
+          <div class="boton-seccion-sistema">
+            <button class="btn btn-outline-success boton-menu" id="btn-guardar">Guardar empleado</button>
+            <button class="btn btn-outline-success boton-menu showMainMenu">Volver al menú principal</button>
+          </div>
 
         </div>
 

@@ -1057,6 +1057,43 @@ select option:checked {
   display: none !important;
 }
 
+.mensajeDiv {
+  display: block;
+  background-color: rgb(58, 128, 169);
+  border-radius: 20px;
+  margin: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  width: 500px;
+  text-align: justify;
+  color: rgb(255, 255, 255) !important;
+  font-family: fuente-cuerpo;
+}
+.mensajeDiv p {
+  color: rgb(255, 255, 255) !important;
+  padding-left: 10px !important;
+  margin-bottom: 20px !important;
+}
+.mensajeDiv:hover {
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+@media (max-width: 970px) {
+  .mensajeDiv {
+    width: 80%;
+  }
+}
+@media (max-width: 740px) {
+  .mensajeDiv {
+    width: 90%;
+  }
+}
+
+.error {
+  color: red !important;
+  font-family: fuente-cuerpo-light;
+}
+
 :root {
   /* Paleta de colores */
   --bs-focus-ring-color: rgb(58, 128, 169) !important;

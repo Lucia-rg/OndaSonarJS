@@ -20,14 +20,18 @@ const usuariosIniciales = [
 ];
 
 function inicializarUsuarios() {
-    if(!localStorage.getItem('usuarios')) {
+    try {
+        if(!localStorage.getItem('usuarios')) {
         localStorage.setItem('usuarios', JSON.stringify(usuariosIniciales));
+        }   
+    } catch (error) {
+        console.error('Error al inicializar usuarios:', error);   
     }
 }
 
-
 document.addEventListener('DOMContentLoaded', function () {
     inicializarUsuarios();
+
     // Objeto de botones menú principal
     const menuBtn = {
         'addUser' : 'registroUsuario',
@@ -82,6 +86,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
         document.getElementById('greet').classList.add('hidden');
 
+        document.querySelectorAll('.mensajeDiv').forEach( mensaje => {
+            mensaje.classList.add('hidden');
+            mensaje.innerHTML = '';
+
+        });
+
+        // Limpiar errores previos 
+        document.querySelectorAll('.error').forEach(error => {
+                error.classList.add('hidden');
+                error.innerHTML = '';
+            });
 
         // Mostrar formulario
         const formShow = document.getElementById(formId);
@@ -102,20 +117,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
+let errores = [];
 
-class Usuario { 
+class Usuario {
     
-    constructor(nombre, apellido, cargo, celular, email, usuarios) {
-        this.nombre = Validador.validarTexto(nombre, 'nombre');
-        this.apellido = Validador.validarTexto(apellido, 'apellido');
-        this.cargo = Validador.validarCargo(cargo, 'cargo');
-        this.celular = Validador.validarCelular(celular);
-        this.email = Validador.validarEmail(email);
+    constructor(nombre, apellido, cargo, celular, email) {
+
+        // Objeto de mensajes de input
+        const mensajesInput = [
+            'nombreError',
+            'apellidoError',
+            'cargoError',
+            'celularError',
+            'emailError'
+        ];
+
+        this.nombre = Validador.validarTexto(nombre, 'nombre', 3, mensajesInput[0]);
+        this.apellido = Validador.validarTexto(apellido, 'apellido', 3, mensajesInput[1]);
+        this.cargo = Validador.validarCargo(cargo, 'cargo', mensajesInput[2]);
+        this.celular = Validador.validarCelular(celular, mensajesInput[3]);
+        this.email = Validador.validarEmail(email, mensajesInput[4]);
         this.fechaRegistro = new Date().toISOString().split('T')[0];
-        this.id = this.idGenerator(usuarios);
+        this.id = this.idGenerator();
     }
 
-    idGenerator (usuarios) {
+    idGenerator () {
+        const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
         return usuarios.length+1;
     }
 
@@ -131,20 +158,25 @@ class Usuario {
             return false;  
         }
     }
-}
+};
 
 class Validador {
 
     // Validar texto
-    static validarTexto(text, nombreCampo, minCaracteres = 3) {
-        const valor = text.trim();
+    static validarTexto(text, nombreCampo, minCaracteres = 3, mensajeError) {
+        const valor = text.trim(); 
+        const mensaje = document.getElementById(mensajeError);
 
-        if (!valor || valor.length === 0 || valor == undefined || valor == NaN) {
-            throw new Error(`El campo ${nombreCampo} no puede estar vacío.`);
+        if (!valor || valor.length === 0 || valor == undefined || valor == NaN) { 
+            mensaje.classList.remove('hidden');
+            mensaje.innerHTML = `El campo ${nombreCampo} no puede estar vacío.`;
+            errores.push('El campo no puede estar vacío.')
         }
 
         if (valor.length < minCaracteres) {
-            throw new Error(`El campo ${nombreCampo} debe tener al menos ${minCaracteres} caracteres.`);  
+            mensaje.classList.remove('hidden');
+            mensaje.innerHTML =`El campo ${nombreCampo} debe tener al menos ${minCaracteres} caracteres.`;
+            errores.push('El campo no puede estar vacío.')  
         }
 
         return valor;
@@ -152,31 +184,60 @@ class Validador {
     }
 
     // Validar número celular
-    static validarCelular (celular) {
+    static validarCelular (celular, mensajeError) {
         const valor = celular;
+        const mensaje = document.getElementById(mensajeError);
+
+         if (!valor || valor.length === 0 || valor == undefined || valor == NaN) { 
+            
+            mensaje.classList.remove('hidden');
+            mensaje.innerHTML = `El campo del celular no puede estar vacío.`;
+            errores.push('El campo no puede estar vacío.')
+        }
+
         if (celular.length < 7) {
-            throw new Error('El celular debe tener al menos 7 dígitos');   
+            
+            mensaje.classList.remove('hidden');
+            mensaje.innerHTML = `El celular debe tener al menos 7 dígitos`;
+            errores.push('El campo no puede estar vacío.')  
         } 
     }
 
     // Validar email
-    static validarEmail (email) {
+    static validarEmail (email, mensajeError) {
+        
         const valor = email.trim().toLowerCase();
+        const mensaje = document.getElementById(mensajeError);
+
+        if (!valor || valor.length === 0 || valor == undefined || valor == NaN) { 
+            
+            mensaje.classList.remove('hidden');
+            mensaje.innerHTML = `El campo de email no puede estar vacío.`;
+            errores.push('El campo no puede estar vacío.')
+        }
         // Formato email
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         if (!regex.test(valor)) {
-            throw new Error(`El email no tiene un formato válido.`);  
+            
+            mensaje.classList.remove('hidden');
+            mensaje.innerHTML = `El email no tiene un formato válido.`;
+            errores.push('El campo no puede estar vacío.')
         }
 
         return valor;
     }
 
     // Validar cargo
-    static validarCargo (cargo, nombreCampo) {
+    static validarCargo (cargo, nombreCampo, mensajeError) {
+
+        const mensaje = document.getElementById(mensajeError);
         // Selección diferente al placeholder
         if (!cargo || cargo ==="" || cargo ==="0") {
-            throw new Error(`Debe seleccionar un ${nombreCampo}.`);    
+            
+            mensaje.classList.remove('hidden');
+            mensaje.innerHTML = `Debe seleccionar un ${nombreCampo}.`;
+            errores.push('El campo no puede estar vacío.')
         }
 
         return cargo;
@@ -186,11 +247,23 @@ class Validador {
 
 
 // Registro de usuario
+let registroUsuario = document.getElementById('btn-guardar');
 
-let registroUsuario = document.getElementById('registroUsuario');
-
-registroUsuario.addEventListener('submit', (e) => {
+registroUsuario.addEventListener('click', (e) => {
     e.preventDefault();
+
+    const mensajeDiv = document.getElementById('adicionUsuario');
+    const form = document.getElementById('form-registro');
+
+    // Limpiar errores previos 
+    document.querySelectorAll('.error').forEach(error => {
+        error.classList.add('hidden');
+        error.innerHTML = '';
+    });
+
+    if (errores.length > 0) {
+        errores = [];
+    }
 
     try {
         const usuario = new Usuario (
@@ -201,27 +274,36 @@ registroUsuario.addEventListener('submit', (e) => {
             document.getElementById('emailInput').value
         );
 
+        if (errores.length > 0) {
+            errores = [];
+            throw new Error(`Debe llenar correctamente los campos.`); 
+        }
+
         // Guardar usuario
         if (usuario.guardarUsuario()) {
-            confirm(`¡Usuario ingresado correctamente! Ya estás en la base de datos de Onda Sonar, ${Usuario.nombre}. \nTu código de empleado es: ${Usuario.codigo}`);
-            
+            mensajeDiv.classList.remove('hidden');
+            mensajeDiv.innerHTML = `
+            <p>✅ ¡Usuario registrado exitosamente! Ya estás en la base de datos de Onda Sonar, ${usuario.nombre}</p>
+            <p>ID asignado: <strong>${usuario.id}</strong></p>
+            <p>Fecha de registro: ${usuario.fechaRegistro}</p>`;
+
+            resetForm(form, mensajeDiv);
+
         } else {
             alert('Error al guardar usuario');
             
-        }
-        
-        
+        }   
         
     } catch (error) {
-        alert(`Error: ${error.message}`);
-        verError(error.message);
-        
+        mensajeDiv.classList.remove('hidden');
+        mensajeDiv.innerHTML = `
+        ❌ Error: asegúrese de llenar correctamente los campos.`;       
     }
-
-
 })
 
+function resetForm (form, mensajeDiv) {
+    setTimeout(() => {
+        form.reset();
+    }, 7000);
 
-// function verError (mensaje) {
-//     const 
-// }
+}

@@ -1,6 +1,6 @@
 @use '../mixins' as m;
 @use '../variables' as v;
-@use '../tipografia';
+@use '../tipografia' as t;
 
 $borde-sistema: rgb(43, 40, 44);
 $color-formulario: rgba(255, 255, 255, 0.4);
@@ -277,3 +277,46 @@ select {
 .hidden {
     display: none !important;
 }
+
+// Mensajes
+
+.mensajeDiv {
+    display: block;
+    background-color: v.$azul;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    width: 500px;
+    text-align: justify;
+    color: v.$blanco !important;
+    font-family: fuente-cuerpo;
+    p {
+        color: v.$blanco !important;
+        padding-left: 10px !important;
+        margin-bottom: 20px !important;
+    }
+
+    &:hover {
+        transform: scale(1.02);
+        transition: all 0.3s ease;
+    }
+
+    @include m.media-max(970px) {
+        width: 80%;
+    }
+
+    @include m.media-max(740px) {
+        width: 90%;
+    }
+
+}
+
+.error {
+    color: red !important;
+    font-family: fuente-cuerpo-light;
+
+}
+
+
+
