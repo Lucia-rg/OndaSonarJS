@@ -267,18 +267,36 @@
             <i class="bi bi-hash"></i><label for="eliminarUsuarioID">Código del empleado a eliminar:</label>
             <input type="text" id="eliminarUsuarioID" name="eliminarUsuarioID" placeholder="Código" required> 
 
-            <div class="error" id="eliminarUsuarioIDError"></div>
+            <div class="error hidden" id="eliminarUsuarioIDError"></div>
 
           </div>
+
+          <div class="mensajeDiv hidden" id="deleteUsuario"></div>
 
           <div class="boton-seccion-sistema">
-            <button class="btn btn-outline-success boton-menu">Eliminar</button>
+            <button class="btn btn-outline-success boton-menu" id="btn-eliminar">Eliminar</button>
             <button class="btn btn-outline-success boton-menu showMainMenu">Volver al menú principal</button>
-            <div class="mensaje-exito" id="adicionUsuarioExitosa"></div>
+            
           </div>
+
+            
+        </div>
+
+        <!-- Confirmación eliminación -->
+
+        <div class="hidden contenedor-seccion contenedor-forms" id="confirmacionEliminar">
+            
+          <h3 id="confirmacionText" class="text-center mt-3">¿Seguro que lo desea eliminar?</h2>
+
+          <div class="mensajeDiv hidden" id="eliminarUsuarioConfirmacion"></div>
+
+          <div class="boton-seccion-sistema">
+          <button class="btn btn-outline-success boton-menu" id="btn-confirmacionEliminar">Eliminar</button>
+          <button class="btn btn-outline-success boton-menu showMainMenu">Volver al menú principal</button>
 
         </div>
 
+        </div>
 
       </div>
 

@@ -200,6 +200,8 @@ class Validador {
             mensaje.innerHTML = `El celular debe tener al menos 7 dígitos`;
             errores.push('El campo no puede estar vacío.')  
         } 
+
+        return valor;
     }
 
     // Validar email
@@ -409,7 +411,7 @@ modificarUsuario.addEventListener('click', (e) => {
 
 });
 
-
+// Actualizar información de usuario
 let actualizarInfo = document.getElementById('btn-actualizar');
 
 actualizarInfo.addEventListener('click', (e) => {
@@ -522,6 +524,131 @@ actualizarInfo.addEventListener('click', (e) => {
 
 });
 
+// Eliminar usuario 
+let eliminarUsuario = document.getElementById('btn-eliminar');
+
+eliminarUsuario.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const mensajeDiv = document.getElementById('deleteUsuario');
+    const mensaje = document.getElementById('eliminarUsuarioIDError');
+
+    // Limpiar errores previos 
+    document.querySelectorAll('.error').forEach(error => {
+        error.classList.add('hidden');
+        error.innerHTML = '';
+    });
+
+        document.querySelectorAll('.mensajeDiv').forEach(error => {
+        error.classList.add('hidden');
+        error.innerHTML = '';
+    });
+
+    if (errores.length > 0) {
+        errores = [];
+    }
+
+    // Limpiar botones
+    document.getElementById('btn-confirmacionEliminar').classList.remove('hidden');
+    document.getElementById('confirmacionText').classList.remove('hidden');
+
+    // -------------------------------------------
+
+    try {
+        const idBuscar = Validador.validarTexto(document.getElementById('eliminarUsuarioID').value, 'código', 1, 'eliminarUsuarioIDError');
+
+        if (errores.length == 0) {
+            infoEmpleado = getUsuarioPorId(Number(idBuscar));
+            console.log(infoEmpleado);
+
+            if (infoEmpleado == undefined) {  
+                mensaje.classList.remove('hidden');
+                mensaje.innerHTML = `El usuario con el código ${idBuscar} no existe en la base de datos de Onda Sonar.`;
+                throw new Error('El usuario no existe.');
+            } else {
+
+
+                    // Limpiar errores previos 
+                    document.querySelectorAll('.error').forEach(error => {
+                        error.classList.add('hidden');
+                        error.innerHTML = '';
+                    });
+
+                    document.querySelectorAll('.mensajeDiv').forEach(error => {
+                        error.classList.add('hidden');
+                        error.innerHTML = '';
+                    });
+
+                    // Mostrar interfaz
+
+                    showInnerForm('confirmacionEliminar')
+                    const info = document.getElementById('infoUsuario');
+                    info.classList.remove('hidden');
+                    document.getElementById('verNombre').innerText = infoEmpleado.nombre;
+                    document.getElementById('verApellido').innerText = infoEmpleado.apellido;
+                    document.getElementById('verCodigo').innerText = infoEmpleado.id;
+                    document.getElementById('verCargo').innerText = infoEmpleado.cargo;
+                    document.getElementById('verCelular').innerText = infoEmpleado.celular;
+                    document.getElementById('verEmail').innerText = infoEmpleado.email;
+                    const btnsInfo = document.getElementById('btns-infoUsuario');
+                    btnsInfo.classList.add('hidden');
+
+
+            }
+
+        } else {
+            errores = [];
+            throw new Error(`Debe llenar correctamente el campo.`); 
+        }
+
+        document.getElementById('eliminarUsuarioID').value = '';
+
+        // Restablecer botones
+        const btnsInfo = document.getElementById('btns-infoUsuario');
+        btnsInfo.classList.add('hidden');
+        
+    } catch (error) {
+
+        mensajeDiv.classList.remove('hidden');
+        mensajeDiv.innerHTML = `
+        ❌ Error: asegúrese de llenar correctamente los campos.`; 
+        
+    }
+});
+
+let confirmacionEliminar = document.getElementById('btn-confirmacionEliminar');
+
+confirmacionEliminar.addEventListener('click', (e) => {
+
+    e.preventDefault();
+    const mensajeDiv = document.getElementById('eliminarUsuarioConfirmacion');
+
+    // Limpiar errores previos 
+    document.querySelectorAll('.error').forEach(error => {
+        error.classList.add('hidden');
+        error.innerHTML = '';
+    });
+
+    document.querySelectorAll('.mensajeDiv').forEach(error => {
+        error.classList.add('hidden');
+        error.innerHTML = '';
+    });
+
+    // ------------------------------------------
+
+    let usuarios = JSON.parse(localStorage.getItem('usuarios') || []);
+    usuarios = usuarios.filter(empleado => empleado.id !== infoEmpleado.id);
+    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+    mensajeDiv.classList.remove('hidden');
+    mensajeDiv.innerHTML = `
+        <p class="text-center"><strong>El usuario con código: ${infoEmpleado.id} se removió correctamente de la base de datos de Onda Sonar.</strong></p>`;
+
+    // Limpiar botones
+    document.getElementById('btn-confirmacionEliminar').classList.add('hidden');
+    document.getElementById('confirmacionText').classList.add('hidden');
+
+});
+
 function isError(errores) {
     if (errores.length != 0) {
         errores = [];
@@ -572,6 +699,6 @@ function showInnerForm (formId) {
 function resetForm (form) {
     setTimeout(() => {
         form.reset();
-    }, 7000);
+    }, 3000);
 
 }
