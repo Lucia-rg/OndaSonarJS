@@ -37,7 +37,7 @@ Los códigos de usuario siguen el siguiente formato:
 
 3. **Número Aleatorio**  
    - Dos dígitos generados aleatoriamente (10-99)  
-   - Ejemplo: `45`
+   - Ejemplo: `10`
 
 ## 📋 Ejemplos Prácticos
 
