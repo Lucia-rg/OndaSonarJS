@@ -6,7 +6,7 @@ const usuariosIniciales = [
         'celular': '3014094201',
         'email': 'lucia.rodg28@gmail.com',
         'fechaRegistro' : '2025-05-16',
-        'id': 1
+        'id': 'LR-10'
     },
     {
         'nombre': 'Sebastián',
@@ -15,7 +15,7 @@ const usuariosIniciales = [
         'celular': '3104613261',
         'email': 'sescobar1029@gmail.com',
         'fechaRegistro' : '2025-05-16',
-        'id': 2
+        'id': 'SE-11'
     }
 ];
 
@@ -137,12 +137,18 @@ class Usuario {
         this.celular = Validador.validarCelular(celular, mensajesInput[3]);
         this.email = Validador.validarEmail(email, mensajesInput[4]);
         this.fechaRegistro = new Date().toISOString().split('T')[0];
-        this.id = this.idGenerator();
+        this.id = this.idGenerator(nombre, apellido);
     }
 
-    idGenerator () {
-        const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
-        return usuarios.length+1;
+    idGenerator (nombre,apellido) {
+        const inicialNombre = nombre.charAt(0).toUpperCase();
+        const inicialApellido = apellido.charAt(0).toUpperCase();
+        const random = Math.floor(10 + Math.random() * 90);
+
+        return `${inicialNombre}${inicialApellido}-${random}`;
+
+        // const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
+        // return usuarios.length+1;
     }
 
     guardarUsuario() {
@@ -344,10 +350,10 @@ searchUsuario.addEventListener('click', (e) => {
     // -------------------------------------------
 
     try {
-        const idBuscar = Validador.validarTexto(document.getElementById('usuarioID').value, 'código', 1, 'usuarioIDError');
+        const idBuscar = Validador.validarTexto(document.getElementById('usuarioID').value, 'código', 5, 'usuarioIDError').toUpperCase();
 
         if (errores.length == 0) {
-            infoEmpleado = getUsuarioPorId(Number(idBuscar));
+            infoEmpleado = getUsuarioPorId(idBuscar);
             console.log(infoEmpleado);
 
             if (infoEmpleado == undefined) {  
@@ -555,10 +561,10 @@ eliminarUsuario.addEventListener('click', (e) => {
     // -------------------------------------------
 
     try {
-        const idBuscar = Validador.validarTexto(document.getElementById('eliminarUsuarioID').value, 'código', 1, 'eliminarUsuarioIDError');
+        const idBuscar = Validador.validarTexto(document.getElementById('eliminarUsuarioID').value, 'código', 5, 'eliminarUsuarioIDError').toUpperCase();
 
         if (errores.length == 0) {
-            infoEmpleado = getUsuarioPorId(Number(idBuscar));
+            infoEmpleado = getUsuarioPorId(idBuscar);
             console.log(infoEmpleado);
 
             if (infoEmpleado == undefined) {  
@@ -567,32 +573,30 @@ eliminarUsuario.addEventListener('click', (e) => {
                 throw new Error('El usuario no existe.');
             } else {
 
+                // Limpiar errores previos 
+                document.querySelectorAll('.error').forEach(error => {
+                    error.classList.add('hidden');
+                    error.innerHTML = '';
+                });
 
-                    // Limpiar errores previos 
-                    document.querySelectorAll('.error').forEach(error => {
-                        error.classList.add('hidden');
-                        error.innerHTML = '';
-                    });
+                document.querySelectorAll('.mensajeDiv').forEach(error => {
+                    error.classList.add('hidden');
+                    error.innerHTML = '';
+                });
 
-                    document.querySelectorAll('.mensajeDiv').forEach(error => {
-                        error.classList.add('hidden');
-                        error.innerHTML = '';
-                    });
+                // Mostrar interfaz
 
-                    // Mostrar interfaz
-
-                    showInnerForm('confirmacionEliminar')
-                    const info = document.getElementById('infoUsuario');
-                    info.classList.remove('hidden');
-                    document.getElementById('verNombre').innerText = infoEmpleado.nombre;
-                    document.getElementById('verApellido').innerText = infoEmpleado.apellido;
-                    document.getElementById('verCodigo').innerText = infoEmpleado.id;
-                    document.getElementById('verCargo').innerText = infoEmpleado.cargo;
-                    document.getElementById('verCelular').innerText = infoEmpleado.celular;
-                    document.getElementById('verEmail').innerText = infoEmpleado.email;
-                    const btnsInfo = document.getElementById('btns-infoUsuario');
-                    btnsInfo.classList.add('hidden');
-
+                showInnerForm('confirmacionEliminar')
+                const info = document.getElementById('infoUsuario');
+                info.classList.remove('hidden');
+                document.getElementById('verNombre').innerText = infoEmpleado.nombre;
+                document.getElementById('verApellido').innerText = infoEmpleado.apellido;
+                document.getElementById('verCodigo').innerText = infoEmpleado.id;
+                document.getElementById('verCargo').innerText = infoEmpleado.cargo;
+                document.getElementById('verCelular').innerText = infoEmpleado.celular;
+                document.getElementById('verEmail').innerText = infoEmpleado.email;
+                const btnsInfo = document.getElementById('btns-infoUsuario');
+                btnsInfo.classList.add('hidden');
 
             }
 
