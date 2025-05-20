@@ -177,7 +177,7 @@
           <h2 class="text-center">Buscar empleado</h2>
 
           <!-- Búsqueda -->
-          <div id="form-infoUsuario" class="input-item" >
+          <div class="input-item" >
 
             <i class="bi bi-hash"></i><label for="usuarioID">Código del empleado:</label>
             <input type="text" id="usuarioID" name="email" placeholder="Código" required> 
@@ -199,7 +199,7 @@
 
         <div id="infoUsuario"  class="hidden contenedor-seccion contenedor-forms">
 
-          <div id="input-grupo infoUsuario" class="info-usuario">
+          <div id="infoCard" class="input-grupo info-usuario">
             <h2 class="text-center m-3">Información del empleado</h3>
             <p><i class="bi bi-person"></i><strong>Nombre:</strong> <span id="verNombre"></span></p>
             <p><i class="bi bi-person"></i><strong>Apellido:</strong> <span id="verApellido"></span></p>
@@ -210,8 +210,8 @@
           </div>
 
 
-          <div class="boton-seccion-sistema">
-              <button class="btn btn-outline-success boton-menu ">Modificar información</button>
+          <div class="boton-seccion-sistema" id="btns-infoUsuario">
+              <button class="btn btn-outline-success boton-menu "  id="btn-modificar">Modificar información</button>
               <button class="btn btn-outline-success boton-menu showMainMenu">Volver al menú principal</button>
           </div>
 
@@ -219,7 +219,7 @@
 
         <!-- Modificar información de usuario -->
 
-        <div id="modificarUsuario" class="hidden contenedor-seccion contenedor-forms">
+        <div id="modificarUsuario" class="hidden mt-3 contenedor-seccion contenedor-forms">
           <h2 class="text-center">Modificar información</h3>
 
           <div class="contenedor-modificar-info">
@@ -235,26 +235,25 @@
                 <option value="celular">Celular</option>
                 <option value="email">Correo electrónico</option>
               </select>
+              <div class="error hidden" id="CampoEditarError"></div>
 
             </div>
 
             <div class="input-item valorCampoEditar">
               <input type="text" name="valorCampoEditar" id="valorCampoEditar" placeholder="Nueva información" required>
 
-              <div class="error" id="valorCampoEditarError"></div>
+              <div class="error hidden" id="valorCampoEditarError"></div>
             </div>
 
 
           </div>
 
+          <div class="mensajeDiv hidden" id="actualizarUsuario"></div>
 
           <div class="boton-seccion-sistema">
-            <button class="btn btn-outline-success boton-menu ">Actualizar información</button>
+            <button class="btn btn-outline-success boton-menu" id="btn-actualizar">Actualizar información</button>
             <button class="btn btn-outline-success boton-menu showMainMenu">Volver al menú principal</button>
           </div>
-
-
-          <div class="mensaje-exito" id="adicionUsuarioExitosa"></div>
 
         </div>
 

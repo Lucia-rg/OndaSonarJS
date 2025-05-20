@@ -241,6 +241,21 @@ class Validador {
 
         return cargo;
     }
+
+    // Validar desde opciones
+        static validarOpciones (selector, mensajeError) {
+
+        const mensaje = document.getElementById(mensajeError);
+        // Selección diferente al placeholder
+        if (!selector || selector ==="" || selector ==="0") {
+            
+            mensaje.classList.remove('hidden');
+            mensaje.innerHTML = `Debe seleccionar una opción.`;
+            errores.push('El campo no puede estar vacío.')
+        }
+
+        return selector;
+    }
     
 }
 
@@ -299,8 +314,6 @@ registroUsuario.addEventListener('click', (e) => {
     }
 });
 
-
-
 // Buscar usuario
 
 let searchUsuario = document.getElementById('btn-buscar');
@@ -355,6 +368,10 @@ searchUsuario.addEventListener('click', (e) => {
         }
 
         document.getElementById('usuarioID').value = '';
+
+        // Restablecer botones
+        const btnsInfo = document.getElementById('btns-infoUsuario');
+        btnsInfo.classList.remove('hidden');
         
     } catch (error) {
 
@@ -364,6 +381,155 @@ searchUsuario.addEventListener('click', (e) => {
         
     }
 });
+
+// Modificar información de usuario 
+let modificarUsuario = document.getElementById('btn-modificar');
+
+modificarUsuario.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    // Limpiar errores previos 
+    document.querySelectorAll('.error').forEach(error => {
+        error.classList.add('hidden');
+        error.innerHTML = '';
+    });
+
+    document.querySelectorAll('.mensajeDiv').forEach(error => {
+        error.classList.add('hidden');
+        error.innerHTML = '';
+    });
+
+    // Mostrar interfaz
+
+    showInnerForm('modificarUsuario')
+    const info = document.getElementById('infoUsuario');
+    info.classList.remove('hidden');
+    const btnsInfo = document.getElementById('btns-infoUsuario');
+    btnsInfo.classList.add('hidden');
+
+});
+
+
+let actualizarInfo = document.getElementById('btn-actualizar');
+
+actualizarInfo.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const mensajeDiv = document.getElementById('actualizarUsuario');
+
+    // Limpiar errores previos 
+    document.querySelectorAll('.error').forEach(error => {
+        error.classList.add('hidden');
+        error.innerHTML = '';
+    });
+
+    document.querySelectorAll('.mensajeDiv').forEach(error => {
+        error.classList.add('hidden');
+        error.innerHTML = '';
+    });
+
+
+    if (errores.length > 0) {
+        errores = [];
+    }
+
+    // --------------------------------------------------------------
+
+    try {
+       
+        const usuarios = JSON.parse(localStorage.getItem('usuarios') || []);
+        const indexEmpleado = usuarios.findIndex(empleado => empleado.id === infoEmpleado.id);
+        const campoModificar = Validador.validarOpciones(document.getElementById('campoEditarUsuario').value, 'CampoEditarError');
+        
+                
+        if (errores.length == 0) {
+            if (campoModificar == 'nombre') {
+                nombre = Validador.validarTexto(document.getElementById('valorCampoEditar').value, 'nombre', 3, 'valorCampoEditarError');
+
+                if (!isError(errores)) {
+                    infoEmpleado.nombre = nombre;
+                    document.getElementById('verNombre').innerText = infoEmpleado.nombre;
+                } else {
+                    errores = [];
+                    throw new Error(`Debe llenar correctamente el campo.`); 
+                }
+
+            } else if (campoModificar == 'apellido') {
+                apellido = Validador.validarTexto(document.getElementById('valorCampoEditar').value, 'apellido', 3, 'valorCampoEditarError');
+
+                if (!isError(errores)) {
+                    infoEmpleado.apellido = apellido;
+                    document.getElementById('verApellido').innerText = infoEmpleado.apellido;
+                } else {
+                    errores = [];
+                    throw new Error(`Debe llenar correctamente el campo.`); 
+                }
+
+            } else if (campoModificar == 'cargo') {
+                cargo = Validador.validarTexto(document.getElementById('valorCampoEditar').value, 'cargo', 3, 'valorCampoEditarError');
+
+                if (!isError(errores)) {
+                    infoEmpleado.cargo = cargo;
+                    document.getElementById('verCargo').innerText = infoEmpleado.cargo;
+                } else {
+                    errores = [];
+                    throw new Error(`Debe llenar correctamente el campo.`); 
+                }
+
+            } else if (campoModificar == 'celular') {
+                celular = Validador.validarCelular(document.getElementById('valorCampoEditar').value, 'valorCampoEditarError');
+
+                if (!isError(errores)) {
+                    infoEmpleado.celular = celular;
+                    document.getElementById('verCelular').innerText = infoEmpleado.celular;
+                } else {
+                    errores = [];
+                    throw new Error(`Debe llenar correctamente el campo.`); 
+                }
+
+            } else if (campoModificar == 'email') {
+                email = Validador.validarEmail(document.getElementById('valorCampoEditar').value, 'valorCampoEditarError');
+
+                if (!isError(errores)) {
+                    infoEmpleado.email = email;
+                    document.getElementById('verEmail').innerText = infoEmpleado.email;
+                } else {
+                    errores = [];
+                    throw new Error(`Debe llenar correctamente el campo.`); 
+                }
+            }
+
+            usuarios[indexEmpleado] = infoEmpleado;
+            localStorage.setItem('usuarios', JSON.stringify(usuarios));
+            mensajeDiv.classList.remove('hidden');
+            mensajeDiv.innerHTML = `
+                <p class="text-center"><strong>✅ ¡Cambio exitoso! ✅</strong></p>`;
+            document.getElementById('campoEditarUsuario').selectedIndex = 0;
+            document.getElementById('valorCampoEditar').value = '';
+
+        } else {
+            errores = [];
+            throw new Error(`Debe llenar correctamente el campo.`); 
+        }
+
+            
+    } catch (error) {
+        mensajeDiv.classList.remove('hidden');
+        mensajeDiv.innerHTML = `
+        ❌ Error: asegúrese de llenar correctamente los campos.`; 
+        
+    }
+
+});
+
+function isError(errores) {
+    if (errores.length != 0) {
+        errores = [];
+        return true;
+    } else {
+        return false;
+    }
+}
 
 function getUsuarioPorId (id) {
 
@@ -395,12 +561,11 @@ function showInnerForm (formId) {
         const formShow = document.getElementById(formId);
         if (formShow) {
             formShow.classList.remove('hidden');
-        }
 
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+            // Poner cursor en primer elemento del DOM
+            const firstInput = formShow.querySelector('input, select, textarea');
+            if (firstInput) firstInput.focus();
+        }
 
 };
 
