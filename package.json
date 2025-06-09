@@ -1,0 +1,25 @@
+{
+  "name": "onda-sonar",
+  "version": "1.0.0",
+  "description": "Portafolio de Ingeniería de Sonido, con enfoque en acústica arquitectónica, control, gestión y aislamiento de ruido, electroacústica, psicoacústica, zonificación acústica y temas afines.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lucia-rg/OndaSonarJS.git"
+  },
+  "keywords": [],
+  "author": "Lucía Rodríguez Giraldo",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Lucia-rg/OndaSonarJS/issues"
+  },
+  "homepage": "https://github.com/Lucia-rg/OndaSonarJS#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

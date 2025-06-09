@@ -1,25 +1,20 @@
-const usuariosIniciales = [
-    {
-        'nombre': 'Lucía',
-        'apellido': 'Rodríguez',
-        'cargo': 'Ingeniero/a',
-        'celular': '3014094201',
-        'email': 'lucia.rodg28@gmail.com',
-        'fechaRegistro' : '2025-05-16',
-        'id': 'LR-10'
-    },
-    {
-        'nombre': 'Sebastián',
-        'apellido': 'Escobar',
-        'cargo': 'Ingeniero/a',
-        'celular': '3104613261',
-        'email': 'sescobar1029@gmail.com',
-        'fechaRegistro' : '2025-05-16',
-        'id': 'SE-11'
-    }
-];
+async function fecthData() {
 
-function inicializarUsuarios() {
+    try {
+        const response = await fetch('../json/empleados.json');
+        const data= await response.json();
+
+        console.log(data);
+        inicializarUsuarios(data);
+        return data;
+        
+    } catch (error) {
+        console.error('Error al inicializar usuarios:', error);  
+        
+    }  
+}
+
+function inicializarUsuarios(usuariosIniciales) {
     try {
         if(!localStorage.getItem('usuarios')) {
         localStorage.setItem('usuarios', JSON.stringify(usuariosIniciales));
@@ -30,7 +25,8 @@ function inicializarUsuarios() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    inicializarUsuarios();
+    // inicializarUsuarios();
+    fecthData()
 
     // Objeto de botones menú principal
     const menuBtn = {
@@ -146,9 +142,6 @@ class Usuario {
         const random = Math.floor(10 + Math.random() * 90);
 
         return `${inicialNombre}${inicialApellido}-${random}`;
-
-        // const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
-        // return usuarios.length+1;
     }
 
     guardarUsuario() {
@@ -640,7 +633,7 @@ confirmacionEliminar.addEventListener('click', (e) => {
 
     // ------------------------------------------
 
-    let usuarios = JSON.parse(localStorage.getItem('usuarios') || []);
+    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
     usuarios = usuarios.filter(empleado => empleado.id !== infoEmpleado.id);
     localStorage.setItem('usuarios', JSON.stringify(usuarios));
     mensajeDiv.classList.remove('hidden');

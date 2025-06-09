@@ -1,0 +1,830 @@
+[
+    {
+      "nombre": "Lucía",
+      "apellido": "Rodríguez",
+      "cargo": "Ingeniero/a",
+      "celular": "3014094201",
+      "email": "lucia.rodg28@gmail.com",
+      "fechaRegistro": "2025-05-16",
+      "id": "LR-10"
+    },
+    {
+      "nombre": "Sebastián",
+      "apellido": "Escobar",
+      "cargo": "Ingeniero/a",
+      "celular": "3104613261",
+      "email": "sescobar1020@gmail.com",
+      "fechaRegistro": "2025-05-16",
+      "id": "SE-11"
+    },
+    {
+      "nombre": "Silvia Elena",
+      "apellido": "Giraldo",
+      "cargo": "Administrativo/a",
+      "celular": "3006163937",
+      "email": "segiraldo@gmail.com",
+      "fechaRegistro": "2025-05-16",
+      "id": "SG-80"
+    },
+    {
+      "nombre": "María",
+      "apellido": "Gómez",
+      "cargo": "Productor/a",
+      "celular": "3157894321",
+      "email": "maria.gomez@gmail.com",
+      "fechaRegistro": "2025-05-17",
+      "id": "MG-42"
+    },
+    {
+      "nombre": "Carlos",
+      "apellido": "Martínez",
+      "cargo": "Administrativo/a",
+      "celular": "3201234567",
+      "email": "carlos.mtz@gmail.com",
+      "fechaRegistro": "2025-05-17",
+      "id": "CM-15"
+    },
+    {
+      "nombre": "Ana",
+      "apellido": "López",
+      "cargo": "Técnico",
+      "celular": "3176543210",
+      "email": "ana.lopez@gmail.com",
+      "fechaRegistro": "2025-05-18",
+      "id": "AL-73"
+    },
+    {
+      "nombre": "Pedro",
+      "apellido": "Ramírez",
+      "cargo": "Practicante",
+      "celular": "3187654321",
+      "email": "pedro.ramirez@gmail.com",
+      "fechaRegistro": "2025-05-18",
+      "id": "PR-28"
+    },
+    {
+      "nombre": "Laura",
+      "apellido": "Fernández",
+      "cargo": "Mantenimiento/a",
+      "celular": "3145678901",
+      "email": "laura.fernandez@gmail.com",
+      "fechaRegistro": "2025-05-19",
+      "id": "LF-56"
+    },
+    {
+      "nombre": "Jorge",
+      "apellido": "Díaz",
+      "cargo": "Ingeniero/a",
+      "celular": "3123456789",
+      "email": "jorge.diaz@gmail.com",
+      "fechaRegistro": "2025-05-19",
+      "id": "JD-84"
+    },
+    {
+      "nombre": "Sofía",
+      "apellido": "Hernández",
+      "cargo": "Productor/a",
+      "celular": "3134567890",
+      "email": "sofia.hernandez@gmail.com",
+      "fechaRegistro": "2025-05-20",
+      "id": "SH-37"
+    },
+    {
+      "nombre": "Andrés",
+      "apellido": "García",
+      "cargo": "Administrativo/a",
+      "celular": "3198765432",
+      "email": "andres.garcia@gmail.com",
+      "fechaRegistro": "2025-05-20",
+      "id": "AG-62"
+    },
+    {
+      "nombre": "Isabel",
+      "apellido": "Torres",
+      "cargo": "Técnico",
+      "celular": "3165432109",
+      "email": "isabel.torres@gmail.com",
+      "fechaRegistro": "2025-05-21",
+      "id": "IT-19"
+    },
+    {
+      "nombre": "Ricardo",
+      "apellido": "Vargas",
+      "cargo": "Practicante",
+      "celular": "3210987654",
+      "email": "ricardo.vargas@gmail.com",
+      "fechaRegistro": "2025-05-21",
+      "id": "RV-45"
+    },
+    {
+      "nombre": "Gabriela",
+      "apellido": "Silva",
+      "cargo": "Mantenimiento/a",
+      "celular": "3143210987",
+      "email": "gabriela.silva@gmail.com",
+      "fechaRegistro": "2025-05-22",
+      "id": "GS-78"
+    },
+    {
+      "nombre": "Fernando",
+      "apellido": "Mendoza",
+      "cargo": "Ingeniero/a",
+      "celular": "3178901234",
+      "email": "fernando.mendoza@gmail.com",
+      "fechaRegistro": "2025-05-22",
+      "id": "FM-23"
+    },
+    {
+      "nombre": "Patricia",
+      "apellido": "Castro",
+      "cargo": "Productor/a",
+      "celular": "3156789012",
+      "email": "patricia.castro@gmail.com",
+      "fechaRegistro": "2025-05-23",
+      "id": "PC-67"
+    },
+    {
+      "nombre": "Hugo",
+      "apellido": "Rojas",
+      "cargo": "Administrativo/a",
+      "celular": "3124567890",
+      "email": "hugo.rojas@gmail.com",
+      "fechaRegistro": "2025-05-23",
+      "id": "HR-31"
+    },
+    {
+      "nombre": "Diana",
+      "apellido": "Ortiz",
+      "cargo": "Técnico",
+      "celular": "3189012345",
+      "email": "diana.ortiz@gmail.com",
+      "fechaRegistro": "2025-05-24",
+      "id": "DO-52"
+    },
+    {
+      "nombre": "Raúl",
+      "apellido": "Guerrero",
+      "cargo": "Practicante",
+      "celular": "3135678901",
+      "email": "raul.guerrero@gmail.com",
+      "fechaRegistro": "2025-05-24",
+      "id": "RG-89"
+    },
+    {
+      "nombre": "Carmen",
+      "apellido": "Navarro",
+      "cargo": "Mantenimiento/a",
+      "celular": "3167890123",
+      "email": "carmen.navarro@gmail.com",
+      "fechaRegistro": "2025-05-25",
+      "id": "CN-14"
+    },
+    {
+      "nombre": "Alberto",
+      "apellido": "Molina",
+      "cargo": "Ingeniero/a",
+      "celular": "3145671234",
+      "email": "alberto.molina@gmail.com",
+      "fechaRegistro": "2025-05-25",
+      "id": "AM-76"
+    },
+    {
+      "nombre": "Elena",
+      "apellido": "Romero",
+      "cargo": "Productor/a",
+      "celular": "3171234567",
+      "email": "elena.romero@gmail.com",
+      "fechaRegistro": "2025-05-26",
+      "id": "ER-33"
+    },
+    {
+      "nombre": "Mario",
+      "apellido": "Suárez",
+      "cargo": "Administrativo/a",
+      "celular": "3207654321",
+      "email": "mario.suarez@gmail.com",
+      "fechaRegistro": "2025-05-26",
+      "id": "MS-58"
+    },
+    {
+      "nombre": "Claudia",
+      "apellido": "Paredes",
+      "cargo": "Técnico",
+      "celular": "3154321098",
+      "email": "claudia.paredes@gmail.com",
+      "fechaRegistro": "2025-05-27",
+      "id": "CP-21"
+    },
+    {
+      "nombre": "Oscar",
+      "apellido": "Cortés",
+      "cargo": "Practicante",
+      "celular": "3182109876",
+      "email": "oscar.cortes@gmail.com",
+      "fechaRegistro": "2025-05-27",
+      "id": "OC-64"
+    },
+    {
+      "nombre": "Verónica",
+      "apellido": "Santos",
+      "cargo": "Mantenimiento/a",
+      "celular": "3148765432",
+      "email": "veronica.santos@gmail.com",
+      "fechaRegistro": "2025-05-28",
+      "id": "VS-47"
+    },
+    {
+      "nombre": "Roberto",
+      "apellido": "Iglesias",
+      "cargo": "Ingeniero/a",
+      "celular": "3129876543",
+      "email": "roberto.iglesias@gmail.com",
+      "fechaRegistro": "2025-05-28",
+      "id": "RI-82"
+    },
+    {
+      "nombre": "Teresa",
+      "apellido": "Delgado",
+      "cargo": "Productor/a",
+      "celular": "3136543210",
+      "email": "teresa.delgado@gmail.com",
+      "fechaRegistro": "2025-05-29",
+      "id": "TD-29"
+    },
+    {
+      "nombre": "Felipe",
+      "apellido": "Campos",
+      "cargo": "Administrativo/a",
+      "celular": "3193210987",
+      "email": "felipe.campos@gmail.com",
+      "fechaRegistro": "2025-05-29",
+      "id": "FC-55"
+    },
+    {
+      "nombre": "Natalia",
+      "apellido": "Fuentes",
+      "cargo": "Técnico",
+      "celular": "3168901234",
+      "email": "natalia.fuentes@gmail.com",
+      "fechaRegistro": "2025-05-30",
+      "id": "NF-38"
+    },
+    {
+      "nombre": "Gustavo",
+      "apellido": "Ríos",
+      "cargo": "Practicante",
+      "celular": "3212345678",
+      "email": "gustavo.rios@gmail.com",
+      "fechaRegistro": "2025-05-30",
+      "id": "GR-71"
+    },
+    {
+      "nombre": "Adriana",
+      "apellido": "Mora",
+      "cargo": "Mantenimiento/a",
+      "celular": "3145678901",
+      "email": "adriana.mora@gmail.com",
+      "fechaRegistro": "2025-05-31",
+      "id": "AM-16"
+    },
+    {
+      "nombre": "Javier",
+      "apellido": "León",
+      "cargo": "Ingeniero/a",
+      "celular": "3176543210",
+      "email": "javier.leon@gmail.com",
+      "fechaRegistro": "2025-05-31",
+      "id": "JL-93"
+    },
+    {
+      "nombre": "Beatriz",
+      "apellido": "Medina",
+      "cargo": "Productor/a",
+      "celular": "3157890123",
+      "email": "beatriz.medina@gmail.com",
+      "fechaRegistro": "2025-06-01",
+      "id": "BM-24"
+    },
+    {
+      "nombre": "Luis",
+      "apellido": "Herrera",
+      "cargo": "Administrativo/a",
+      "celular": "3123456789",
+      "email": "luis.herrera@gmail.com",
+      "fechaRegistro": "2025-06-01",
+      "id": "LH-68"
+    },
+    {
+      "nombre": "Silvia",
+      "apellido": "Cárdenas",
+      "cargo": "Técnico",
+      "celular": "3189012345",
+      "email": "silvia.cardenas@gmail.com",
+      "fechaRegistro": "2025-06-02",
+      "id": "SC-41"
+    },
+    {
+      "nombre": "Diego",
+      "apellido": "Peña",
+      "cargo": "Practicante",
+      "celular": "3134567890",
+      "email": "diego.pena@gmail.com",
+      "fechaRegistro": "2025-06-02",
+      "id": "DP-87"
+    },
+    {
+      "nombre": "Rosa",
+      "apellido": "Vega",
+      "cargo": "Mantenimiento/a",
+      "celular": "3161234567",
+      "email": "rosa.vega@gmail.com",
+      "fechaRegistro": "2025-06-03",
+      "id": "RV-52"
+    },
+    {
+      "nombre": "Arturo",
+      "apellido": "Soto",
+      "cargo": "Ingeniero/a",
+      "celular": "3147890123",
+      "email": "arturo.soto@gmail.com",
+      "fechaRegistro": "2025-06-03",
+      "id": "AS-35"
+    },
+    {
+      "nombre": "Gladys",
+      "apellido": "Valdez",
+      "cargo": "Productor/a",
+      "celular": "3178901234",
+      "email": "gladys.valdez@gmail.com",
+      "fechaRegistro": "2025-06-04",
+      "id": "GV-79"
+    },
+    {
+      "nombre": "Ernesto",
+      "apellido": "Miranda",
+      "cargo": "Administrativo/a",
+      "celular": "3201234567",
+      "email": "ernesto.miranda@gmail.com",
+      "fechaRegistro": "2025-06-04",
+      "id": "EM-26"
+    },
+    {
+      "nombre": "Alicia",
+      "apellido": "Rivas",
+      "cargo": "Técnico",
+      "celular": "3154567890",
+      "email": "alicia.rivas@gmail.com",
+      "fechaRegistro": "2025-06-05",
+      "id": "AR-63"
+    },
+    {
+      "nombre": "Héctor",
+      "apellido": "Aguilar",
+      "cargo": "Practicante",
+      "celular": "3187890123",
+      "email": "hector.aguilar@gmail.com",
+      "fechaRegistro": "2025-06-05",
+      "id": "HA-94"
+    },
+    {
+      "nombre": "Lorena",
+      "apellido": "Espinoza",
+      "cargo": "Mantenimiento/a",
+      "celular": "3140123456",
+      "email": "lorena.espinoza@gmail.com",
+      "fechaRegistro": "2025-06-06",
+      "id": "LE-17"
+    },
+    {
+      "nombre": "Francisco",
+      "apellido": "Bravo",
+      "cargo": "Ingeniero/a",
+      "celular": "3126789012",
+      "email": "francisco.bravo@gmail.com",
+      "fechaRegistro": "2025-06-06",
+      "id": "FB-48"
+    },
+    {
+      "nombre": "Margarita",
+      "apellido": "Gallegos",
+      "cargo": "Productor/a",
+      "celular": "3193456789",
+      "email": "margarita.gallegos@gmail.com",
+      "fechaRegistro": "2025-06-07",
+      "id": "MG-72"
+    },
+    {
+      "nombre": "Rodrigo",
+      "apellido": "Salazar",
+      "cargo": "Administrativo/a",
+      "celular": "3167890123",
+      "email": "rodrigo.salazar@gmail.com",
+      "fechaRegistro": "2025-06-07",
+      "id": "RS-85"
+    },
+    {
+      "nombre": "Estela",
+      "apellido": "Montes",
+      "cargo": "Técnico",
+      "celular": "3131234567",
+      "email": "estela.montes@gmail.com",
+      "fechaRegistro": "2025-06-08",
+      "id": "EM-39"
+    },
+    {
+      "nombre": "Manuel",
+      "apellido": "Cervantes",
+      "cargo": "Practicante",
+      "celular": "3184567890",
+      "email": "manuel.cervantes@gmail.com",
+      "fechaRegistro": "2025-06-08",
+      "id": "MC-57"
+    },
+    {
+      "nombre": "Ruth",
+      "apellido": "Rosales",
+      "cargo": "Mantenimiento/a",
+      "celular": "3147890123",
+      "email": "ruth.rosales@gmail.com",
+      "fechaRegistro": "2025-06-09",
+      "id": "RR-81"
+    },
+    {
+      "nombre": "Santiago",
+      "apellido": "Pizarro",
+      "cargo": "Ingeniero/a",
+      "celular": "3170123456",
+      "email": "santiago.pizarro@gmail.com",
+      "fechaRegistro": "2025-06-09",
+      "id": "SP-34"
+    },
+    {
+      "nombre": "Olga",
+      "apellido": "Zúñiga",
+      "cargo": "Productor/a",
+      "celular": "3156789012",
+      "email": "olga.zuniga@gmail.com",
+      "fechaRegistro": "2025-06-10",
+      "id": "OZ-65"
+    },
+    {
+      "nombre": "Eduardo",
+      "apellido": "Lara",
+      "cargo": "Administrativo/a",
+      "celular": "3129012345",
+      "email": "eduardo.lara@gmail.com",
+      "fechaRegistro": "2025-06-10",
+      "id": "EL-92"
+    },
+    {
+      "nombre": "Irene",
+      "apellido": "Maldonado",
+      "cargo": "Técnico",
+      "celular": "3192345678",
+      "email": "irene.maldonado@gmail.com",
+      "fechaRegistro": "2025-06-11",
+      "id": "IM-43"
+    },
+    {
+      "nombre": "Víctor",
+      "apellido": "Cabrera",
+      "cargo": "Practicante",
+      "celular": "3165678901",
+      "email": "victor.cabrera@gmail.com",
+      "fechaRegistro": "2025-06-11",
+      "id": "VC-76"
+    },
+    {
+      "nombre": "Leticia",
+      "apellido": "Villanueva",
+      "cargo": "Mantenimiento/a",
+      "celular": "3148901234",
+      "email": "leticia.villanueva@gmail.com",
+      "fechaRegistro": "2025-06-12",
+      "id": "LV-59"
+    },
+    {
+      "nombre": "Rafael",
+      "apellido": "Quintero",
+      "cargo": "Ingeniero/a",
+      "celular": "3121234567",
+      "email": "rafael.quintero@gmail.com",
+      "fechaRegistro": "2025-06-12",
+      "id": "RQ-28"
+    },
+    {
+      "nombre": "Yolanda",
+      "apellido": "Serrano",
+      "cargo": "Productor/a",
+      "celular": "3174567890",
+      "email": "yolanda.serrano@gmail.com",
+      "fechaRegistro": "2025-06-13",
+      "id": "YS-91"
+    },
+    {
+      "nombre": "Mauricio",
+      "apellido": "Rangel",
+      "cargo": "Administrativo/a",
+      "celular": "3207890123",
+      "email": "mauricio.rangel@gmail.com",
+      "fechaRegistro": "2025-06-13",
+      "id": "MR-14"
+    },
+    {
+      "nombre": "Aurora",
+      "apellido": "Mejía",
+      "cargo": "Técnico",
+      "celular": "3150123456",
+      "email": "aurora.mejia@gmail.com",
+      "fechaRegistro": "2025-06-14",
+      "id": "AM-77"
+    },
+    {
+      "nombre": "Gerardo",
+      "apellido": "Barrera",
+      "cargo": "Practicante",
+      "celular": "3183456789",
+      "email": "gerardo.barrera@gmail.com",
+      "fechaRegistro": "2025-06-14",
+      "id": "GB-32"
+    },
+    {
+      "nombre": "Esperanza",
+      "apellido": "Castañeda",
+      "cargo": "Mantenimiento/a",
+      "celular": "3146789012",
+      "email": "esperanza.castaneda@gmail.com",
+      "fechaRegistro": "2025-06-15",
+      "id": "EC-85"
+    },
+    {
+      "nombre": "Alfonso",
+      "apellido": "Orozco",
+      "cargo": "Ingeniero/a",
+      "celular": "3179012345",
+      "email": "alfonso.orozco@gmail.com",
+      "fechaRegistro": "2025-06-15",
+      "id": "AO-46"
+    },
+    {
+      "nombre": "Rocío",
+      "apellido": "Valencia",
+      "cargo": "Productor/a",
+      "celular": "3132345678",
+      "email": "rocio.valencia@gmail.com",
+      "fechaRegistro": "2025-06-16",
+      "id": "RV-69"
+    },
+    {
+      "nombre": "Guillermo",
+      "apellido": "Franco",
+      "cargo": "Administrativo/a",
+      "celular": "3165678901",
+      "email": "guillermo.franco@gmail.com",
+      "fechaRegistro": "2025-06-16",
+      "id": "GF-53"
+    },
+    {
+      "nombre": "Pilar",
+      "apellido": "Guevara",
+      "cargo": "Técnico",
+      "celular": "3198901234",
+      "email": "pilar.guevara@gmail.com",
+      "fechaRegistro": "2025-06-17",
+      "id": "PG-27"
+    },
+    {
+      "nombre": "René",
+      "apellido": "Soria",
+      "cargo": "Practicante",
+      "celular": "3141234567",
+      "email": "rene.soria@gmail.com",
+      "fechaRegistro": "2025-06-17",
+      "id": "RS-98"
+    },
+    {
+      "nombre": "Consuelo",
+      "apellido": "Pacheco",
+      "cargo": "Mantenimiento/a",
+      "celular": "3124567890",
+      "email": "consuelo.pacheco@gmail.com",
+      "fechaRegistro": "2025-06-18",
+      "id": "CP-61"
+    },
+    {
+      "nombre": "Federico",
+      "apellido": "Zamora",
+      "cargo": "Ingeniero/a",
+      "celular": "3177890123",
+      "email": "federico.zamora@gmail.com",
+      "fechaRegistro": "2025-06-18",
+      "id": "FZ-22"
+    },
+    {
+      "nombre": "Miriam",
+      "apellido": "Tapia",
+      "cargo": "Productor/a",
+      "celular": "3150123456",
+      "email": "miriam.tapia@gmail.com",
+      "fechaRegistro": "2025-06-19",
+      "id": "MT-74"
+    },
+    {
+      "nombre": "Saúl",
+      "apellido": "Vázquez",
+      "cargo": "Administrativo/a",
+      "celular": "3183456789",
+      "email": "saul.vazquez@gmail.com",
+      "fechaRegistro": "2025-06-19",
+      "id": "SV-39"
+    },
+    {
+      "nombre": "Lourdes",
+      "apellido": "Rosas",
+      "cargo": "Técnico",
+      "celular": "3136789012",
+      "email": "lourdes.rosas@gmail.com",
+      "fechaRegistro": "2025-06-20",
+      "id": "LR-83"
+    },
+    {
+      "nombre": "Agustín",
+      "apellido": "Lozano",
+      "cargo": "Practicante",
+      "celular": "3169012345",
+      "email": "agustin.lozano@gmail.com",
+      "fechaRegistro": "2025-06-20",
+      "id": "AL-56"
+    },
+    {
+      "nombre": "Eva",
+      "apellido": "Cisneros",
+      "cargo": "Mantenimiento/a",
+      "celular": "3142345678",
+      "email": "eva.cisneros@gmail.com",
+      "fechaRegistro": "2025-06-21",
+      "id": "EC-97"
+    },
+    {
+      "nombre": "César",
+      "apellido": "Romo",
+      "cargo": "Ingeniero/a",
+      "celular": "3125678901",
+      "email": "cesar.romo@gmail.com",
+      "fechaRegistro": "2025-06-21",
+      "id": "CR-44"
+    },
+    {
+      "nombre": "Norma",
+      "apellido": "Velasco",
+      "cargo": "Productor/a",
+      "celular": "3178901234",
+      "email": "norma.velasco@gmail.com",
+      "fechaRegistro": "2025-06-22",
+      "id": "NV-71"
+    },
+    {
+      "nombre": "Humberto",
+      "apellido": "Barrios",
+      "cargo": "Administrativo/a",
+      "celular": "3201234567",
+      "email": "humberto.barrios@gmail.com",
+      "fechaRegistro": "2025-06-22",
+      "id": "HB-18"
+    },
+    {
+      "nombre": "Susana",
+      "apellido": "Cuevas",
+      "cargo": "Técnico",
+      "celular": "3154567890",
+      "email": "susana.cuevas@gmail.com",
+      "fechaRegistro": "2025-06-23",
+      "id": "SC-63"
+    },
+    {
+      "nombre": "Fabián",
+      "apellido": "Salinas",
+      "cargo": "Practicante",
+      "celular": "3187890123",
+      "email": "fabian.salinas@gmail.com",
+      "fechaRegistro": "2025-06-23",
+      "id": "FS-29"
+    },
+    {
+      "nombre": "Magdalena",
+      "apellido": "Juárez",
+      "cargo": "Mantenimiento/a",
+      "celular": "3140123456",
+      "email": "magdalena.juarez@gmail.com",
+      "fechaRegistro": "2025-06-24",
+      "id": "MJ-82"
+    },
+    {
+      "nombre": "Ramiro",
+      "apellido": "Núñez",
+      "cargo": "Ingeniero/a",
+      "celular": "3123456789",
+      "email": "ramiro.nunez@gmail.com",
+      "fechaRegistro": "2025-06-24",
+      "id": "RN-35"
+    },
+    {
+      "nombre": "Luisa",
+      "apellido": "Márquez",
+      "cargo": "Productor/a",
+      "celular": "3176789012",
+      "email": "luisa.marquez@gmail.com",
+      "fechaRegistro": "2025-06-25",
+      "id": "LM-58"
+    },
+    {
+      "nombre": "Erick",
+      "apellido": "Galván",
+      "cargo": "Administrativo/a",
+      "celular": "3169012345",
+      "email": "erick.galvan@gmail.com",
+      "fechaRegistro": "2025-06-25",
+      "id": "EG-91"
+    },
+    {
+      "nombre": "Graciela",
+      "apellido": "Sánchez",
+      "cargo": "Técnico",
+      "celular": "3192345678",
+      "email": "graciela.sanchez@gmail.com",
+      "fechaRegistro": "2025-06-26",
+      "id": "GS-24"
+    },
+    {
+      "nombre": "Julio",
+      "apellido": "Reyes",
+      "cargo": "Practicante",
+      "celular": "3145678901",
+      "email": "julio.reyes@gmail.com",
+      "fechaRegistro": "2025-06-26",
+      "id": "JR-77"
+    },
+    {
+      "nombre": "Rita",
+      "apellido": "Acosta",
+      "cargo": "Mantenimiento/a",
+      "celular": "3128901234",
+      "email": "rita.acosta@gmail.com",
+      "fechaRegistro": "2025-06-27",
+      "id": "RA-42"
+    },
+    {
+      "nombre": "Salvador",
+      "apellido": "Montoya",
+      "cargo": "Ingeniero/a",
+      "celular": "3171234567",
+      "email": "salvador.montoya@gmail.com",
+      "fechaRegistro": "2025-06-27",
+      "id": "SM-65"
+    },
+    {
+      "nombre": "Marisol",
+      "apellido": "Carrillo",
+      "cargo": "Productor/a",
+      "celular": "3154567890",
+      "email": "marisol.carrillo@gmail.com",
+      "fechaRegistro": "2025-06-28",
+      "id": "MC-38"
+    },
+    {
+      "nombre": "Alfredo",
+      "apellido": "Camacho",
+      "cargo": "Administrativo/a",
+      "celular": "3187890123",
+      "email": "alfredo.camacho@gmail.com",
+      "fechaRegistro": "2025-06-28",
+      "id": "AC-81"
+    },
+    {
+      "nombre": "Liliana",
+      "apellido": "Villarreal",
+      "cargo": "Técnico",
+      "celular": "3130123456",
+      "email": "liliana.villarreal@gmail.com",
+      "fechaRegistro": "2025-06-29",
+      "id": "LV-54"
+    },
+    {
+      "nombre": "Rogelio",
+      "apellido": "Sosa",
+      "cargo": "Practicante",
+      "celular": "3163456789",
+      "email": "rogelio.sosa@gmail.com",
+      "fechaRegistro": "2025-06-29",
+      "id": "RS-97"
+    },
+    {
+      "nombre": "Araceli",
+      "apellido": "Méndez",
+      "cargo": "Mantenimiento/a",
+      "celular": "3146789012",
+      "email": "araceli.mendez@gmail.com",
+      "fechaRegistro": "2025-06-30",
+      "id": "AM-26"
+    }
+  ]
